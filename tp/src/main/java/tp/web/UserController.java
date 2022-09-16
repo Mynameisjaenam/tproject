@@ -21,12 +21,12 @@ public class UserController {
 
    @Resource(name = "userService")
    private UserService userService;
-
+   //ffffff
    // 최상위경로
    @RequestMapping("/")
    public String home() {
       return "index";
-   }
+   } 
 
    // 인덱스타고 들어오는 메인페이지뷰
    @RequestMapping(value = "/main.do")
