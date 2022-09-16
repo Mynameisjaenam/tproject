@@ -43,10 +43,16 @@ public class UserController {
    // 회원가입 진행
    @ResponseBody
    @RequestMapping(value = "/signUp.do", method = RequestMethod.POST)
-   public String signUpForm(UserVO userVo) throws SQLException {
+   public String signUpForm(UserVO userVo, 
+		   @RequestParam(name = "userPw") String userPw,
+		   @RequestParam(name = "userPw2") String userPw2) throws SQLException {
       String data = "";
-      userService.insertUser(userVo);
-      data = "ok";
+      
+      if(userPw.contentEquals(userPw2)) {    	  
+    	  userService.insertUser(userVo);
+          data = "ok";  
+      }   
+      
       return data;
    }
 

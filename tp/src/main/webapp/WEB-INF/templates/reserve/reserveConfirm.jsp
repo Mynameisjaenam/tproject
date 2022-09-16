@@ -278,6 +278,14 @@ hr {
    background-color: #FDF5DC;
    border-radius: 5px;
 }
+th, td{
+  text-align: left;
+ 
+  
+}
+
+ 
+
 </style>
    
 <script type="text/javascript">
@@ -314,9 +322,9 @@ hr {
             <form>
                <h3 class="login" style="letter-spacing: -1px;">Reservation Confirm</h3>
                <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
-               
+               <hr>
         <div id="mainHide">
-      <table class="table table-hover" id="table">
+      <table class="table table-hover" id="table" style='width:1000px'>
          <thead style="background-color:#fff7c4">
             <tr>
                <th scope="col">번호</th>

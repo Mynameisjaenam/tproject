@@ -278,6 +278,9 @@ hr {
    background-color: #FDF5DC;
    border-radius: 5px;
 }
+th, td {
+  text-align: left;
+}
 </style>
 
    
@@ -295,7 +298,7 @@ hr {
                <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
                
         <div id="mainHide">
-      <table class="table table-hover" id="table">
+      <table class="table table-hover" id="table" style='width:1000px'>
          <thead style="background-color:#fff7c4">
             <tr>
                <th scope="col">번호</th>
@@ -312,41 +315,41 @@ hr {
          </thead>
          <tbody>
          <c:forEach var="admin1reserve" items="${admin1ReserveList}">
-				<tr>
-					<td>${admin1reserve.reserveNo}</td>
-					<td>${admin1reserve.userId}</td>
-					<td>${admin1reserve.userName}</td>					
-					<td>${admin1reserve.userPhone}</td>
-					<td><fmt:formatDate value="${admin1reserve.reserveDate}" pattern="yyyy-MM-dd" /></td>
-					<td>${admin1reserve.reserveSTime}</td>
-					<td>${admin1reserve.reserveETime}</td>
-					<td>
-					<c:set var="rno" value="${admin1reserve.roomNo}" />
-					<c:if test="${rno eq 1}">
-						<c:out value="1번 4인실" />
-					</c:if>
-					<c:if test="${rno eq 2}">
-						<c:out value="2번 4인실" />
-					</c:if>
-					<c:if test="${rno eq 3}">
-						<c:out value="3번 6인실" />
-					</c:if>
-					<c:if test="${rno eq 4}">
-						<c:out value="4번 6인실" />
-					</c:if>
-					</td>
-					<td>
-					<c:set var="bno" value="${admin1reserve.branchNo}" />
-					<c:if test="${bno eq 1}">
-						<c:out value="대구알파시티점" />
-					</c:if>
-					<c:if test="${bno eq 2}">
-						<c:out value="대구만촌점" />
-					</c:if>
-					</td>
-					<td>${admin1reserve.price}원</td>
-				</tr>
-			</c:forEach>
+            <tr>
+               <td>${admin1reserve.reserveNo}</td>
+               <td>${admin1reserve.userId}</td>
+               <td>${admin1reserve.userName}</td>               
+               <td>${admin1reserve.userPhone}</td>
+               <td><fmt:formatDate value="${admin1reserve.reserveDate}" pattern="yyyy-MM-dd" /></td>
+               <td>${admin1reserve.reserveSTime}</td>
+               <td>${admin1reserve.reserveETime}</td>
+               <td>
+               <c:set var="rno" value="${admin1reserve.roomNo}" />
+               <c:if test="${rno eq 1}">
+                  <c:out value="1번 4인실" />
+               </c:if>
+               <c:if test="${rno eq 2}">
+                  <c:out value="2번 4인실" />
+               </c:if>
+               <c:if test="${rno eq 3}">
+                  <c:out value="3번 6인실" />
+               </c:if>
+               <c:if test="${rno eq 4}">
+                  <c:out value="4번 6인실" />
+               </c:if>
+               </td>
+               <td>
+               <c:set var="bno" value="${admin1reserve.branchNo}" />
+               <c:if test="${bno eq 1}">
+                  <c:out value="대구알파시티점" />
+               </c:if>
+               <c:if test="${bno eq 2}">
+                  <c:out value="대구만촌점" />
+               </c:if>
+               </td>
+               <td>${admin1reserve.price}원</td>
+            </tr>
+         </c:forEach>
          </tbody>
       </table>      
    </div>              

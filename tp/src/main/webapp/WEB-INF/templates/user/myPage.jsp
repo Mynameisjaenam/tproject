@@ -348,15 +348,18 @@ input[name=userPw]::placeholder {
   
  /*비밀번호확인하고 넘어갈수있음  */
     function modifyNames(){
-       var pass = $('#userPw').val(); 
+       var pass = $('#userPw').val();
+       var sePass = $("#userPw3").val();
        
         if(pass == ""){
             alert("비밀번호를 입력하세요.");
-         } else{
+         }else if(pass != sePass){
+            alert("비밀번호가 일치하지 않습니다.")
+         }else{
            var width = 420;
            var height = 700;
            
-           var left = (window.screen.width/2) - (width/2);     
+           var left = (window.screen.width/2) - (width/2);      
            var top = (window.screen.height/4);
              
            var windowStatus = 'width='+width+', height='+height+', left='+left+', top='+top+', scrollbars=yes, status=yes, resizable=yes, titlebar=yes';
@@ -367,9 +370,12 @@ input[name=userPw]::placeholder {
    
    function modifyPhone(){
       var pass = $('#userPw').val(); 
+      var sePass = $("#userPw3").val();
      
         if(pass == ""){
             alert("비밀번호를 입력하세요.");
+         }else if(pass != sePass){
+            alert("비밀번호가 일치하지 않습니다.")
          }else{
            var width = 420;
            var height = 700;
@@ -385,9 +391,12 @@ input[name=userPw]::placeholder {
    
    function modifyEmail(){
       var pass = $('#userPw').val(); 
+      var sePass = $("#userPw3").val();
         
         if(pass == ""){
             alert("비밀번호를 입력하세요.");
+         }else if(pass != sePass){
+            alert("비밀번호가 일치하지 않습니다.")
          }else{
            var width = 420;
            var height = 700;
@@ -403,10 +412,13 @@ input[name=userPw]::placeholder {
    
    function modifyPw(){
       var pass = $('#userPw').val(); 
+      var sePass = $("#userPw3").val();
         
         if(pass == ""){
             alert("비밀번호를 입력하세요.");
             
+         }else if(pass != sePass){
+            alert("비밀번호가 일치하지 않습니다.")
          }else{
            var width = 420;
            var height = 700;
@@ -422,6 +434,7 @@ input[name=userPw]::placeholder {
    
    function userSave(){
       var pass = $('#userPw').val(); 
+      var sePass = $("#userPw3").val();
        
        if(pass == ""){
            alert("비밀번호를 입력하세요.");

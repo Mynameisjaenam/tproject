@@ -281,6 +281,9 @@ input[name=userPw]::placeholder {
    width: 250px;
       height: 30px;
 }
+th, td {
+  text-align: left;
+}
 
 </style>
 
