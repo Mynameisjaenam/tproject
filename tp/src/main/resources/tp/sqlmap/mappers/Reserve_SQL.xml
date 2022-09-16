@@ -37,7 +37,12 @@
 	
 	<select id="selectReserveList" resultMap="reserveResult">
 		<!-- SELECT * FROM tp_reserve WHERE userId=#{userId} and reserveDate>=CURDATE() ORDER BY reserveDate, reserveStime, reserveNo LIMIT #{startIndex},#{endIndex} -->
-		SELECT * FROM tp_reserve WHERE userId=#{userId} and reserveDate>=CURDATE() ORDER BY reserveDate, reserveStime, reserveNo
+		<!-- SELECT * FROM tp_reserve WHERE userId=#{userId} and reserveDate>=CURDATE() ORDER BY reserveDate, reserveStime, reserveNo -->
+		SELECT * FROM tp_reserve WHERE userId=#{userId} ORDER BY reserveDate, reserveStime, reserveNo
+	</select>
+	
+	<select id="myPageReserveList" resultMap="reserveResult">		
+		SELECT * FROM tp_reserve WHERE userId=#{userId} ORDER BY reserveDate, reserveStime, reserveNo
 	</select>
 	
 	<select id="adminReserveList" resultMap="reserveResult">

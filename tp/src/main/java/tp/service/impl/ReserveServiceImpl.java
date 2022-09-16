@@ -85,5 +85,10 @@ public class ReserveServiceImpl implements ReserveService {
 	public int selectreserveUserTotal(String userId) throws Exception {
 		return reserveDAO.selectreserveUserTotal(userId);
 	}
+
+	@Override
+	public List<ReserveVO> myPageReserveList(String userId) throws Exception {
+		return reserveDAO.myPageReserveList(userId);
+	}
 	
 }

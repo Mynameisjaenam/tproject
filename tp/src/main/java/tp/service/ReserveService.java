@@ -23,6 +23,8 @@ public interface ReserveService {
 	
 	List<ReserveVO> admin2ReserveList(ReserveVO vo) throws Exception;
 	
+	List<ReserveVO> myPageReserveList(String userId) throws Exception;
+	
 	void reserveDelete(int reserveNo) throws Exception;
 	
 	void reserveUpdate(int reserveNo) throws Exception;

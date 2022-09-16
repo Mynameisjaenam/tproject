@@ -510,7 +510,7 @@ input[name=userPw]::placeholder {
                   
                     <p>
                      <input type="hidden" class="btn2" onclick="userUpdate()" value="저장"></input>
-                     <input type="button" class="btn5" onclick="location.href='reserveConfirm.do'" value="예약조회"></input>
+                     <input type="button" class="btn5" onclick="location.href='reserveConfirm.do'" value="예약내역조회"></input>
                      <input type="button" class="btn5" onclick="location.href='drop.do'" value="회원탈퇴"></input>
                      <br><br>
                      <p align="right">

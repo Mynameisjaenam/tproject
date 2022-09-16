@@ -198,7 +198,7 @@ li{
                               }else if(USERID != null && USERPW != null){   
                            %>
                      	   <a href="seatInfoAlpha.do" class="navbar-brand2">RESERVE</a>
-                           <a href="reserveConfirm.do" class="navbar-brand2">RESERVATION CONFIRM</a>
+                           <a href="reserveConfirmAlpha.do" class="navbar-brand2">RESERVATION CONDITION</a>
                            <a href="myPage.do" class="navbar-brand2">MYPAGE</a>                    
                            <a href="logout.do" class="navbar-brand2">LOGOUT</a>
                            <%
@@ -271,7 +271,7 @@ li{
                   } else if(USERID != null && USERPW != null){   
                %>
                <li><a href="seatInfoAlpha.do">RESERVE</a></li>
-               <li><a href="reserveConfirm.do">RESERVATION CONFIRM</a></li>
+               <li><a href="reserveConfirmAlpha.do">RESERVATION CONDITION</a></li>
                <li><a href="myPage.do">Mypage</a></li>
                <li><a href="logout.do">logout</a></li>
                <%

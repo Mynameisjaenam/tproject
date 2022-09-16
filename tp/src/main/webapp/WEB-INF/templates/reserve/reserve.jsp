@@ -284,7 +284,7 @@ hr {
   }); */
    
    $(function() {
-      $("#reserveDate").datepicker({ minDate: 0});      
+      $("#reserveDate").datepicker({ minDate: 0});
    } );
    
    function reservecheck() {

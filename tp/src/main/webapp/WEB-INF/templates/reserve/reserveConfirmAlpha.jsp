@@ -145,7 +145,7 @@ a {
 }
 
 .login {
-   font-size: 30px;
+   font-size: 25px;
    font-weight: 900;
    color: #FDF5DC;
 }
@@ -261,7 +261,7 @@ hr {
 }
 
 .btn2 {
-   width: 100px;
+   width: 50px;
    height: 40px;
    font-size: 15px;
    background-color: #D7A35D;
@@ -276,7 +276,7 @@ hr {
 }
 
 .btn3 {
-   width: 105px;
+   width: 120px;
    height: 40px;
    font-size: 15px;
    background-color: #D7A35D;
@@ -289,198 +289,43 @@ hr {
 .btn3:hover {
    background: #D7A35D;
 }
-.btn4 {
-   width: 120px;
-   height: 30px;
-   font-size: 14px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
 
-.btn4:hover {
-   background: #D7A35D;
-}
 #table{
    background-color: #FDF5DC;
    border-radius: 5px;
 }
-
-.seat .btn {
-
-  position: absolute;
-
-  top: 30%;
-
-  left: 58%;
+th, td{
+  text-align: left;
+ 
   
-  width: 100px;
-  
-  height: 84px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
 }
 
-
-
-.seat .btn:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
-.seat .btn2 {
-
-  position: absolute;
-
-  top: 49%;
-
-  left: 58%;
-  
-  width: 100px;
-  
-  height: 84px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-.seat .btn2:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
-.seat .btn3 {
-
-  position: absolute;
-
-  top: 31%;
-
-  left: 85%;
-  
-  width: 129px;
-  
-  height: 93px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-.seat .btn3:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
-.seat .btn4 {
-
-  position: absolute;
-
-  top: 48%;
-
-  left: 85%;
-  
-  width: 129px;
-  
-  height: 98px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-.seat .btn4:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
+ 
 
 </style>
-
-
+   
+<script type="text/javascript">
+   
+   function reservedelete(a) {
+       var resNo = a
+      
+      $.ajax({
+         url:'reserveDeleteConfirm.do',
+         type:'POST',
+         data:{
+            reserveNo:resNo   
+         },
+         datatype:'JSON',         
+         success: function(data) {
+            if(data == "success"){
+               location = "reserveDelete.do"
+            }
+            
+         }
+      });
+   }
+   
+</script>
    
 <title>The Venue Study Cafe</title>
 </head>
@@ -488,34 +333,75 @@ hr {
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
 <br><br>
    <div id="con">
-      <div id="reserve">      
+      <div id="reserve">
          <div id="reserve_form">
-         <h3 class="login" style="letter-spacing: -1px;">대구 만촌점 좌석배치도</h3>   
-         <br>    
-         <input type="button" class="btn4" onclick="location.href='seatInfoAlpha.do'" value="대구 알파시티점" />
-        &nbsp;&nbsp;
-        <input type="button" class="btn4" onclick="location.href='seatInfoMan.do'" value="대구 만촌점" /> 
-            <form>            
-               
-               
+            <form>
+               <h3 class="login" style="letter-spacing: -1px;">Reservation Condition (대구 알파시티점)</h3>
+		       <input type="button" class="btn3" onclick="location.href='reserveConfirmMan.do'" value="대구 만촌점 보기" />  
+               <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
+               <hr>
         <div id="mainHide">
-        <br>       
-      <table class="table table-hover" id="table">
-        <div class="seat">
-            <img src="resources/images/al.png" width="900" height="500">
-            <button type="button" class="btn" onclick="location.href='reserveMan4.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='reserveMan4.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='reserveMan6.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='reserveMan6.do'">6인실</button>
-         </div>         
-   <div class="pull-right">
-   <input type="button" class="btn3" onclick="location.href='reserveMan4.do'" value="4인실 예약하기" />
-   &nbsp;&nbsp;
-   <input type="button" class="btn3" onclick="location.href='reserveMan6.do'" value="6인실 예약하기" />
-   </div>
-   </table>
-   </div>
-         </form>
+      <table class="table table-hover" id="table" style='width:1000px'>
+         <thead style="background-color:#fff7c4">
+            <tr>
+               <th scope="col">번호</th>
+               <th scope="col">아이디</th>
+               <th scope="col">이름</th>
+               <th scope="col">연락처</th>
+               <th scope="col">날짜</th>
+               <th scope="col">시작시간</th>
+               <th scope="col">종료시간</th>
+               <th scope="col">방번호</th>
+               <th scope="col">지점번호</th>
+               <th scope="col">이용금액</th>
+            </tr>
+         </thead>
+         <tbody>
+         <c:forEach var="reserveAlpha" items="${reserveConfirmAlpha}">
+            <tr>
+               <td>${reserveAlpha.reserveNo}</td>
+               <td>${reserveAlpha.userId}</td>
+               <td>${reserveAlpha.userName}</td>               
+               <td>${reserveAlpha.userPhone}</td>
+               <td><fmt:formatDate value="${reserveAlpha.reserveDate}" pattern="yyyy-MM-dd" /></td>
+               <td>${reserveAlpha.reserveSTime}</td>
+               <td>${reserveAlpha.reserveETime}</td>
+               <td>
+               <c:set var="rno" value="${reserveAlpha.roomNo}" />
+               <c:if test="${rno eq 1}">
+                  <c:out value="1번 4인실" />
+               </c:if>
+               <c:if test="${rno eq 2}">
+                  <c:out value="2번 4인실" />
+               </c:if>
+               <c:if test="${rno eq 3}">
+                  <c:out value="3번 6인실" />
+               </c:if>
+               <c:if test="${rno eq 4}">
+                  <c:out value="4번 6인실" />
+               </c:if>
+               </td>
+               <td>
+               <c:set var="bno" value="${reserveAlpha.branchNo}" />
+               <c:if test="${bno eq 1}">
+                  <c:out value="대구알파시티점" />
+               </c:if>
+               <c:if test="${bno eq 2}">
+                  <c:out value="대구만촌점" />
+               </c:if>
+               </td>
+               <td>${reserveAlpha.price}원</td>                              
+            </tr>
+         </c:forEach>
+         </tbody>
+      </table>      
+   </div>              
+
+   <br/>
+                  <p></p>
+                  <br>                
+                  <input type="button" class="btn2" onclick="location.href='main.do'" value="확인" />
+            </form>
          </div>
          </div>
          </div>

@@ -124,6 +124,12 @@ a {
    padding: 0;
 }
 
+button.btn8{
+   position: absolute;
+   top: 85px;
+   left: 95px;
+}
+
 #reserve {
    width: 600px;
    height: 600px;
@@ -307,6 +313,178 @@ hr {
    background-color: #FDF5DC;
    border-radius: 5px;
 }
+
+ 
+.seat .btn {
+
+  position: absolute;
+
+  top: 80%;
+
+  left: 51%;
+  
+  width: 150px;
+  
+  height: 50px;
+
+  transform: translate(-50%, -50%);
+
+  -ms-transform: translate(-50%, -50%);
+
+  background-color: #FDF5DC;
+
+  color: black;
+
+  font-size: 16px;
+
+  /* padding: 16px 30px; */
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  text-align: center;
+
+}
+
+
+
+.seat .btn:hover {
+
+  background-color: #D7A35D;
+
+  color: black; 
+
+}
+
+.seat .btn2 {
+
+  position: absolute;
+
+  top: 80%;
+
+  left: 33%;
+  
+  width: 150px;
+  
+  height: 50px;
+
+  transform: translate(-50%, -50%);
+
+  -ms-transform: translate(-50%, -50%);
+
+  background-color: #FDF5DC;
+
+  color: black;
+
+  font-size: 16px;
+
+  /* padding: 16px 30px; */
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  text-align: center;
+
+}
+
+.seat .btn2:hover {
+
+  background-color: #D7A35D;
+
+  color: black; 
+
+}
+
+.seat .btn3 {
+
+  position: absolute;
+
+  top: 80%;
+
+  left: 68%;
+  
+  width: 160px;
+  
+  height: 50px;
+
+  transform: translate(-50%, -50%);
+
+  -ms-transform: translate(-50%, -50%);
+
+  background-color: #FDF5DC;
+
+  color: black;
+
+  font-size: 16px;
+
+  /* padding: 16px 30px; */
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  text-align: center;
+
+}
+
+.seat .btn3:hover {
+
+  background-color: #D7A35D;
+
+  color: black; 
+
+}
+
+.seat .btn4 {
+
+  position: absolute;
+
+  top: 80%;
+
+  left: 86%;
+  
+  width: 149px;
+  
+  height: 50px;
+
+  transform: translate(-50%, -50%);
+
+  -ms-transform: translate(-50%, -50%);
+
+  background-color: #FDF5DC;
+
+  color: black;
+
+  font-size: 16px;
+
+  /* padding: 16px 30px; */
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  text-align: center;
+
+}
+
+.seat .btn4:hover {
+
+  background-color: #D7A35D;
+
+  color: black; 
+
+}
+
 </style>
 
 
@@ -315,13 +493,6 @@ hr {
 </head>
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
-<%
-   String USERID = (String) session.getAttribute("SessionUserID"); //정상적으로 로그인이 진행되면 USERID,USERPW에 값이 들어옴
-   String USERPW = (String) session.getAttribute("SessionUserPW");
-   String USERNAME = (String) session.getAttribute("SessionUserName");
-   String USERPHONE = (String) session.getAttribute("SessionUserPhone");
-   String USERBIRTH = (String) session.getAttribute("SessionUserBirth");
-%>
 <br><br>
    <div id="con">
       <div id="reserve">             
@@ -331,23 +502,23 @@ hr {
          <input type="button" class="btn4" onclick="location.href='seatInfoAlpha.do'" value="대구 알파시티점" />
         &nbsp;&nbsp;
         <input type="button" class="btn4" onclick="location.href='seatInfoMan.do'" value="대구 만촌점" />  
-            <form>            
-                            
+            <form>                             
         <div id="mainHide">
         <br>  
       <table class="table table-hover" id="table">
-         <div><img src="resources/images/seat.png" width="900" height="500"></div>  
-       <%
-       	    if(USERID != null && USERPW != null){   
-       %>    
-	   <div class="pull-right">
-	   <input type="button" class="btn3" onclick="location.href='reserveAlpha4.do'" value="4인실 예약하기" />
-	   &nbsp;&nbsp;
-	   <input type="button" class="btn3" onclick="location.href='reserveAlpha6.do'" value="6인실 예약하기" />
-	   </div>
-	   <%
-	        }
-	   %>
+         <div class="seat">
+            <img src="resources/images/seat.png" width="900" height="500">
+            <button type="button" class="btn" onclick="location.href='reserveAlpha4.do'">4인실</button>  
+            <button type="button" class="btn2" onclick="location.href='reserveAlpha4.do'">4인실</button>    
+            <button type="button" class="btn3" onclick="location.href='reserveAlpha6.do'">6인실</button>
+            <button type="button" class="btn4" onclick="location.href='reserveAlpha6.do'">6인실</button>
+         </div>   
+            
+   <div class="pull-right">
+   <input type="button" class="btn3" onclick="location.href='reserveAlpha4.do'" value="4인실 예약하기" />
+   &nbsp;&nbsp;
+   <input type="button" class="btn3" onclick="location.href='reserveAlpha6.do'" value="6인실 예약하기" />
+   </div>
    </table>
    </div>
          </form>

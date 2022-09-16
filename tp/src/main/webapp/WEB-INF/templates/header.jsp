@@ -140,7 +140,7 @@
                               }else if(USERID != null && USERPW != null){   
                            %>                           
                            <li><a href="seatInfoAlpha.do">RESERVE</a></li>
-                           <li><a href="reserveConfirm.do">RESERVATION CONFIRM</a></li>
+                           <li><a href="reserveConfirmAlpha.do">RESERVATION CONDITION</a></li>
                            <li><a href="myPage.do">MY PAGE</a></li>
                            <li><a href="logout.do">LOGOUT</a></li>
                            <%

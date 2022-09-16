@@ -83,26 +83,25 @@ public class ReserveController {
 
 		System.out.println(userId);
 		
-//		int total = reserveService.selectreserveUserTotal(userId);
-//		int totalPage = (int)Math.ceil((double)total/10);
-//		int viewPage = vo.getViewPage();
-//		int startIndex = (viewPage-1) * 10;		
-//		int endIndex = 10;
-//		
-//		vo.setStartIndex(startIndex);
-//		vo.setEndIndex(endIndex);
-//		
-//		model.addAttribute("total", total);
-//		model.addAttribute("viewPage", viewPage);
-//		model.addAttribute("totalPage", totalPage);
-//		model.addAttribute("startIndex", startIndex);
-//		model.addAttribute("endIndex", endIndex);
-
-//		model.addAttribute("reserveList", list);
-		
 		model.addAttribute("reserveList", reserveService.selectReserveList(userId));
 		
 		return "reserve/reserveConfirm";
+	}
+	
+	@RequestMapping(value = "/reserveConfirmAlpha.do", method = RequestMethod.GET)
+	public String reserveConfirmAlpha(ReserveVO vo, Model model) throws Exception {
+
+		model.addAttribute("reserveConfirmAlpha", reserveService.admin1ReserveList(vo));
+
+		return "reserve/reserveConfirmAlpha";
+	}
+	
+	@RequestMapping(value = "/reserveConfirmMan.do", method = RequestMethod.GET)
+	public String reserveConfirmMan(ReserveVO vo, Model model) throws Exception {
+
+		model.addAttribute("reserveConfirmMan", reserveService.admin2ReserveList(vo));
+
+		return "reserve/reserveConfirmMan";
 	}
 
 	@RequestMapping(value = "/adminReserveList.do", method = RequestMethod.GET)

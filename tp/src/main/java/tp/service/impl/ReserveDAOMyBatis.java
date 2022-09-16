@@ -90,6 +90,12 @@ public class ReserveDAOMyBatis extends EgovAbstractMapper implements ReserveDAO{
 		return selectOne("selectreserveUserTotal", userId);
 	}
 
+	@Override
+	public List<ReserveVO> myPageReserveList(String userId) throws Exception {
+		System.out.println("===> MyBatis로 myPageReserveList() 기능 처리");
+		return selectList("myPageReserveList", userId);
+	}
+
 	
 	
 }

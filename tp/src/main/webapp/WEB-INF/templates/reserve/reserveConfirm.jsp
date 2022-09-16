@@ -380,16 +380,7 @@ th, td{
          </tbody>
       </table>      
    </div>              
-   
-   <!--페이징 처리  -->
-   <%-- <div class="big-width" style="text-align: center">
-      <input type="button" onclick="location.href='reserveConfirm.do?viewPage=1'" value="이전" class="btn2"></input>                 
-      <c:forEach var="i" begin="1" end="${totalPage}">
-      <input type="button" onclick="location.href='reserveConfirm.do?viewPage=${i}'"  class="btn4" value="${i}"></input>
-         <a href="reserveConfirm.do?viewPage=${i}" class="btn4">${i}</a>
-      </c:forEach>
-      <input type="button" onclick="location.href='reserveConfirm.do?viewPage=${totalPage}'" value="마지막으로" class="btn2"></input>      
-   </div> --%>
+
    <br/>
                   <p></p>
                   <br>                
