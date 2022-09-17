@@ -319,7 +319,7 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 80%;
 
   left: 51%;
   
@@ -363,7 +363,7 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 80%;
 
   left: 33%;
   
@@ -405,7 +405,7 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 80%;
 
   left: 68%;
   
@@ -447,7 +447,7 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 80%;
 
   left: 86%;
   
@@ -521,6 +521,7 @@ hr {
         <%
 		   }
         %>
+          
             <form>                             
         <div id="mainHide">
         <br>  

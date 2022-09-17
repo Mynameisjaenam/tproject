@@ -232,7 +232,7 @@ input[name=userEmail]::placeholder {
 </script>
 
 
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
    <div id="con">
@@ -245,7 +245,7 @@ input[name=userEmail]::placeholder {
                   <input type="hidden" id="userId" name="userId" class="size"
                      placeholder="아이디를 입력해주세요" value="${SessionUserID}" required/>
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">EMAIL</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">이메일</p>
                      <input type="email" name="userEmail" id="userEmail" class="size" 
                      value="${user.userEmail}" placeholder="이메일을 입력해주세요" required>
                   </label>

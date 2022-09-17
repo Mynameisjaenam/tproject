@@ -320,9 +320,11 @@ th, td{
       <div id="reserve">
          <div id="reserve_form">
             <form>
-               <h3 class="login" style="letter-spacing: -1px;">Reservation Confirm</h3>
+               <h3 class="login" style="letter-spacing: -1px;">My Reservation Confirm</h3>
                <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
+               <br>
                <hr>
+               <br>
         <div id="mainHide">
       <table class="table table-hover" id="table" style='width:1000px'>
          <thead style="background-color:#fff7c4">

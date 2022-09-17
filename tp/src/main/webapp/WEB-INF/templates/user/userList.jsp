@@ -274,7 +274,7 @@ hr {
       }
 })
 </script> -->
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
@@ -288,13 +288,13 @@ hr {
                   <table class="table table-hover" id="table">
                      <thead style="background-color:#fff7c4">
                         <tr>
-                           <th scope="col" >ID</th>
-                           <th scope="col">PW</th>
-                           <th scope="col">NAME</th>
-                           <th scope="col">BIRTH</th>
-                           <th scope="col">PHONE</th>
-                           <th scope="col">EMAIL</th>
-                           <th scope="col">CREATEDATE</th>
+                           <th scope="col" >아이디</th>
+                           <th scope="col">비밀번호</th>
+                           <th scope="col">이름</th>
+                           <th scope="col">생년월일</th>
+                           <th scope="col">전화번호</th>
+                           <th scope="col">이메일</th>
+                           <th scope="col">가입날짜</th>
                         </tr>
                      </thead>
                      <tbody>

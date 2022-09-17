@@ -124,12 +124,6 @@ a {
    padding: 0;
 }
 
-button.btn8{
-   position: absolute;
-   top: 85px;
-   left: 95px;
-}
-
 #reserve {
    width: 600px;
    height: 600px;
@@ -314,18 +308,17 @@ hr {
    border-radius: 5px;
 }
 
- 
 .seat .btn {
 
   position: absolute;
 
-  top: 85%;
+  top: 31%;
 
-  left: 51%;
+  left: 58%;
   
-  width: 150px;
+  width: 100px;
   
-  height: 53px;
+  height: 85px;
 
   transform: translate(-50%, -50%);
 
@@ -363,13 +356,13 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 50%;
 
-  left: 33%;
+  left: 58%;
   
-  width: 150px;
+  width: 100px;
   
-  height: 52px;
+  height: 84px;
 
   transform: translate(-50%, -50%);
 
@@ -405,13 +398,13 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 32%;
 
-  left: 68%;
+  left: 85%;
   
-  width: 160px;
+  width: 129px;
   
-  height: 50px;
+  height: 93px;
 
   transform: translate(-50%, -50%);
 
@@ -447,13 +440,13 @@ hr {
 
   position: absolute;
 
-  top: 85%;
+  top: 48%;
 
-  left: 86%;
+  left: 85%;
   
-  width: 149px;
+  width: 129px;
   
-  height: 50px;
+  height: 98px;
 
   transform: translate(-50%, -50%);
 
@@ -502,10 +495,10 @@ hr {
 %>
 <br><br>
    <div id="con">
-      <div id="reserve">             
+      <div id="reserve">      
          <div id="reserve_form">
-          <h3 class="login" style="letter-spacing: -1px;">대구 알파시티점 좌석배치도</h3>  
-          <hr>
+         <h3 class="login" style="letter-spacing: -1px;">대구 만촌점 좌석배치도</h3> 
+         <hr>  
          <%
 		   if (USERID != null && USERPW != null) {
 		 %>  
@@ -521,43 +514,23 @@ hr {
         <%
 		   }
         %>
-            <form>                             
+            <form>            
+               
+               
         <div id="mainHide">
-        <br>  
+        <br>       
       <table class="table table-hover" id="table">
-      
-         <div class="seat">
-            <img src="resources/images/seat.png" width="900" height="500">
-            <%
-		      if (USERID != null && USERPW != null) {
-		    %>
-            <button type="button" class="btn" onclick="location.href='reserveAlpha4.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='reserveAlpha4.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='reserveAlpha6.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='reserveAlpha6.do'">6인실</button>
-             <%
-		      } else {
-		     %>
-		    <button type="button" class="btn" onclick="location.href='login.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='login.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='login.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='login.do'">6인실</button>
-            <%
-		      }
-            %>
-         </div> 
-       
-            
+        <div class="seat">
+            <img src="resources/images/al.png" width="900" height="500">
+            <button type="button" class="btn" onclick="location.href='reserveMan4.do'">4인실</button>  
+            <button type="button" class="btn2" onclick="location.href='reserveMan4.do'">4인실</button>    
+            <button type="button" class="btn3" onclick="location.href='reserveMan6.do'">6인실</button>
+            <button type="button" class="btn4" onclick="location.href='reserveMan6.do'">6인실</button>
+         </div>         
    <div class="pull-right">
-    <%
-		if (USERID != null && USERPW != null) {
-	%>
-   <input type="button" class="btn3" onclick="location.href='reserveAlpha4.do'" value="4인실 예약하기" />
+   <input type="button" class="btn3" onclick="location.href='reserveMan4.do'" value="4인실 예약하기" />
    &nbsp;&nbsp;
-   <input type="button" class="btn3" onclick="location.href='reserveAlpha6.do'" value="6인실 예약하기" />
-   <%
-		}
-   %>
+   <input type="button" class="btn3" onclick="location.href='reserveMan6.do'" value="6인실 예약하기" />
    </div>
    </table>
    </div>

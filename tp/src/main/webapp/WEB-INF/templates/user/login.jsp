@@ -260,7 +260,7 @@ input[name=userPw]::placeholder {
 }
    
 </script>
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>   
@@ -268,18 +268,18 @@ input[name=userPw]::placeholder {
       <div id="login">
          <div id="login_form">
             <form action="list.do" method="post">
-               <h3 class="login" style="letter-spacing: -1px;">Sign in to Web</h3>
+               <h3 class="login" style="letter-spacing: -1px;">로그인</h3>
                <hr>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">ID</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">아이디</p>
                      <input type="text" id="userId" name="userId" class="size"
                      placeholder="아이디를 입력해주세요" required>
                   </label>
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PASSWORD</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호</p>
                      <input type="password" id="userPw" name="userPw" class="size"
                      placeholder="비밀번호를 입력해주세요" required>
                      <p></p>

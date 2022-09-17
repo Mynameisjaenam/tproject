@@ -33,4 +33,6 @@ public interface ReserveService {
 	
 	int selectreserveUserTotal(String userId) throws Exception;
 	
+	void insertBranch(ReserveVO vo) throws Exception;
+	
 }

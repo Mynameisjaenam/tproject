@@ -90,5 +90,11 @@ public class ReserveServiceImpl implements ReserveService {
 	public List<ReserveVO> myPageReserveList(String userId) throws Exception {
 		return reserveDAO.myPageReserveList(userId);
 	}
+
+	@Override
+	public void insertBranch(ReserveVO vo) throws Exception {
+		System.out.println("===> insertBranch Impl 실행");
+		reserveDAO.insertBranch(vo);		
+	}
 	
 }

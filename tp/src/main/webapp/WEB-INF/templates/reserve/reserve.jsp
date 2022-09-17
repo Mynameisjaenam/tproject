@@ -353,7 +353,7 @@ hr {
       <div id="reserve">
          <div id="reserve_form">
             <form method="post" action="insertreserve.do">
-               <h3 class="login" style="letter-spacing: -1px;">Reservation</h3>
+               <h3 class="login" style="letter-spacing: -1px;">예약하기</h3>
                <hr>
                <div class="form-group">
                <input type="hidden" id="userBirth" name="userBirth" value="${SessionUserBirth}">

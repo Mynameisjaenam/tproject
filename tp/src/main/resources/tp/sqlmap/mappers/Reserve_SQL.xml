@@ -13,6 +13,9 @@
 		<result property="roomNo" column="roomNo"/>
 		<result property="branchNo" column="branchNo"/>
 		<result property="price" column="price"/>
+		<result property="branchName" column="branchName"/>
+		<result property="roomName" column="roomName"/>
+		<result property="adminId" column="adminId"/>
 	</resultMap>
 
 	<insert id="insertReserve" parameterType="tp.service.ReserveVO">
@@ -99,5 +102,15 @@
 	<select id="selectreserveUserTotal" resultType="int">
 		SELECT COUNT(*) total FROM tp_reserve where userId=#{userId} and reserveDate >= CURDATE()
 	</select>
+	
+	<insert id="insertBranch">
+		INSERT INTO tp_room(branchNo, roomNo, branchName, roomName, adminId) VALUES(
+		branchNo=#{branchNo},
+		roomNo=#{roomNo},
+		branchName=#{branchName},
+		roomName=#{roomName},
+		adminId=#{adminId}
+		)
+	</insert>
 	
 </mapper>

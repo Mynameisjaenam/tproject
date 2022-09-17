@@ -240,7 +240,7 @@ hr {
 </script>
 
 
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
    <div id="con">

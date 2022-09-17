@@ -312,13 +312,13 @@ hr {
 
   position: absolute;
 
-  top: 30%;
+  top: 32%;
 
   left: 58%;
   
   width: 100px;
   
-  height: 84px;
+  height: 85px;
 
   transform: translate(-50%, -50%);
 
@@ -356,7 +356,7 @@ hr {
 
   position: absolute;
 
-  top: 49%;
+  top: 53%;
 
   left: 58%;
   
@@ -398,7 +398,7 @@ hr {
 
   position: absolute;
 
-  top: 31%;
+  top: 34%;
 
   left: 85%;
   
@@ -440,7 +440,7 @@ hr {
 
   position: absolute;
 
-  top: 48%;
+  top: 50%;
 
   left: 85%;
   
@@ -486,15 +486,34 @@ hr {
 </head>
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
+<%
+   String USERID = (String) session.getAttribute("SessionUserID"); //정상적으로 로그인이 진행되면 USERID,USERPW에 값이 들어옴
+   String USERPW = (String) session.getAttribute("SessionUserPW");
+   String USERNAME = (String) session.getAttribute("SessionUserName");
+   String USERPHONE = (String) session.getAttribute("SessionUserPhone");
+   String USERBIRTH = (String) session.getAttribute("SessionUserBirth");
+%>
 <br><br>
    <div id="con">
       <div id="reserve">      
          <div id="reserve_form">
-         <h3 class="login" style="letter-spacing: -1px;">대구 만촌점 좌석배치도</h3>   
-         <br>    
-         <input type="button" class="btn4" onclick="location.href='seatInfoAlpha.do'" value="대구 알파시티점" />
+         <h3 class="login" style="letter-spacing: -1px;">대구 만촌점 좌석배치도</h3> 
+         <hr>  
+          <%
+		    if (USERID != null && USERPW != null) {
+		  %>
+         <input type="button" class="btn4" onclick="location.href='loginseatInfoAlpha.do'" value="대구 알파시티점" />
+        &nbsp;&nbsp;
+        <input type="button" class="btn4" onclick="location.href='loginseatInfoMan.do'" value="대구 만촌점" /> 
+        <%
+		    } else {
+        %>
+        <input type="button" class="btn4" onclick="location.href='seatInfoAlpha.do'" value="대구 알파시티점" />
         &nbsp;&nbsp;
         <input type="button" class="btn4" onclick="location.href='seatInfoMan.do'" value="대구 만촌점" /> 
+        <%
+		    }
+        %>
             <form>            
                
                
@@ -503,15 +522,34 @@ hr {
       <table class="table table-hover" id="table">
         <div class="seat">
             <img src="resources/images/al.png" width="900" height="500">
+            <%
+		      if (USERID != null && USERPW != null) {
+		    %>
             <button type="button" class="btn" onclick="location.href='reserveMan4.do'">4인실</button>  
             <button type="button" class="btn2" onclick="location.href='reserveMan4.do'">4인실</button>    
             <button type="button" class="btn3" onclick="location.href='reserveMan6.do'">6인실</button>
             <button type="button" class="btn4" onclick="location.href='reserveMan6.do'">6인실</button>
+            <%
+		      } else {
+		     %>
+		    <button type="button" class="btn" onclick="location.href='login.do'">4인실</button>  
+            <button type="button" class="btn2" onclick="location.href='login.do'">4인실</button>    
+            <button type="button" class="btn3" onclick="location.href='login.do'">6인실</button>
+            <button type="button" class="btn4" onclick="location.href='login.do'">6인실</button>
+            <%
+		      }
+            %>
          </div>         
    <div class="pull-right">
+    <%
+		if (USERID != null && USERPW != null) {
+	%>
    <input type="button" class="btn3" onclick="location.href='reserveMan4.do'" value="4인실 예약하기" />
    &nbsp;&nbsp;
    <input type="button" class="btn3" onclick="location.href='reserveMan6.do'" value="6인실 예약하기" />
+   <%
+		}
+   %>
    </div>
    </table>
    </div>

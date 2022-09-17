@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html xmlns:th="http://www.thymeleaf.org" lang="kor">
 <head>
 <link rel="stylesheet"
@@ -21,11 +17,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <script src="./datepicker/js/datepicker.ko.js"></script>
 
-<script type="text/javascript">
-   
-   
-   
-</script>
 
 <style>
 /* @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css'); */
@@ -124,12 +115,6 @@ a {
    padding: 0;
 }
 
-button.btn8{
-   position: absolute;
-   top: 85px;
-   left: 95px;
-}
-
 #reserve {
    width: 600px;
    height: 600px;
@@ -147,11 +132,11 @@ button.btn8{
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%); 
 }
 
 .login {
-   font-size: 30px;
+   font-size: 25px;
    font-weight: 900;
    color: #FDF5DC;
 }
@@ -215,6 +200,22 @@ button.btn8{
    background: #D7A35D;
 }
 
+.btn2 {
+   width: 150px;
+   height: 40px;
+   font-size: 15px;
+   background-color: #D7A35D;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+.btn2:hover {
+   background: #D7A35D;
+}
+
+
 hr {
    margin-top: 20px;
    background: #eee;
@@ -265,305 +266,117 @@ hr {
    color: #6A82FB;
    display: none;
 }
-
-.btn2 {
-   width: 100px;
-   height: 40px;
-   font-size: 15px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
-
-.btn2:hover {
-   background: #D7A35D;
-}
-
-.btn3 {
-   width: 105px;
-   height: 40px;
-   font-size: 15px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
-
-.btn3:hover {
-   background: #D7A35D;
-}
-.btn4 {
-   width: 120px;
-   height: 30px;
-   font-size: 14px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
-
-.btn4:hover {
-   background: #D7A35D;
-}
-#table{
-   background-color: #FDF5DC;
-   border-radius: 5px;
-}
-
- 
-.seat .btn {
-
-  position: absolute;
-
-  top: 85%;
-
-  left: 51%;
-  
-  width: 150px;
-  
-  height: 53px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-
-
-.seat .btn:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
-.seat .btn2 {
-
-  position: absolute;
-
-  top: 85%;
-
-  left: 33%;
-  
-  width: 150px;
-  
-  height: 52px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-.seat .btn2:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
-.seat .btn3 {
-
-  position: absolute;
-
-  top: 85%;
-
-  left: 68%;
-  
-  width: 160px;
-  
-  height: 50px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-.seat .btn3:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
-.seat .btn4 {
-
-  position: absolute;
-
-  top: 85%;
-
-  left: 86%;
-  
-  width: 149px;
-  
-  height: 50px;
-
-  transform: translate(-50%, -50%);
-
-  -ms-transform: translate(-50%, -50%);
-
-  background-color: #FDF5DC;
-
-  color: black;
-
-  font-size: 16px;
-
-  /* padding: 16px 30px; */
-
-  border: none;
-
-  cursor: pointer;
-
-  border-radius: 5px;
-
-  text-align: center;
-
-}
-
-.seat .btn4:hover {
-
-  background-color: #D7A35D;
-
-  color: black; 
-
-}
-
 </style>
 
-
+<script type="text/javascript">
+   
+   function adminInsert() {
+      var bNo = $("#branchNo").val();
+      var rNo = $("#roomNo").val();
+      var bName = $("#branchName").val();
+      var rName = $("#roomName").val();
+      var aId = $("#adminId").val();          
+      
+      alert(bNo);
+      alert(rNo);
+      alert(bName);
+      alert(rName);
+      alert(aId);
+      
+      if(bNo == ""){
+         alert("지점번호를 입력하세요.")
+      }else if(rNo == ""){
+         alert("방번호를 입력하세요.")
+      }else if(bName == ""){
+         alert("지점이름을 입력하세요.")
+      }else if(rName == ""){
+         alert("방정보를 입력하세요.")
+      }else if(aId == ""){
+         alert("관리자 아이디를 입력하세요.")
+      }else{
+         $.ajax({
+            url:'adminInsert.do',
+            type:'POST',
+            data:{
+               branchNo:bNo,
+               roomNo:rNo,
+               branchName:bName,
+               roomName:rName,
+               adminId:aId
+            },
+            datatype:'JSON',
+            
+            success: function(data) {
+               if(data == "ok") {
+                  alert("지점등록이 완료되었습니다.");               
+                  location = "main.do"
+               } else(data == "fail") {
+                  alert("입력사항을 확인해 주세요.");
+               } 
+            }
+         });
+      }
+   }
+   
+</script>
    
 <title>The Venue Study Cafe</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
-<%
-   String USERID = (String) session.getAttribute("SessionUserID"); //정상적으로 로그인이 진행되면 USERID,USERPW에 값이 들어옴
-   String USERPW = (String) session.getAttribute("SessionUserPW");
-   String USERNAME = (String) session.getAttribute("SessionUserName");
-   String USERPHONE = (String) session.getAttribute("SessionUserPhone");
-   String USERBIRTH = (String) session.getAttribute("SessionUserBirth");
-%>
 <br><br>
    <div id="con">
-      <div id="reserve">             
+      <div id="reserve">
          <div id="reserve_form">
-          <h3 class="login" style="letter-spacing: -1px;">대구 알파시티점 좌석배치도</h3>  
-          <hr>
-         <%
-		   if (USERID != null && USERPW != null) {
-		 %>  
-        <input type="button" class="btn4" onclick="location.href='loginseatInfoAlpha.do'" value="대구 알파시티점" />
-        &nbsp;&nbsp;
-        <input type="button" class="btn4" onclick="location.href='loginseatInfoMan.do'" value="대구 만촌점" />  
-         <%
-		   } else {
-         %>
-         <input type="button" class="btn4" onclick="location.href='seatInfoAlpha.do'" value="대구 알파시티점" />
-        &nbsp;&nbsp;
-        <input type="button" class="btn4" onclick="location.href='seatInfoMan.do'" value="대구 만촌점" />  
-        <%
-		   }
-        %>
-            <form>                             
-        <div id="mainHide">
-        <br>  
-      <table class="table table-hover" id="table">
-      
-         <div class="seat">
-            <img src="resources/images/seat.png" width="900" height="500">
-            <%
-		      if (USERID != null && USERPW != null) {
-		    %>
-            <button type="button" class="btn" onclick="location.href='reserveAlpha4.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='reserveAlpha4.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='reserveAlpha6.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='reserveAlpha6.do'">6인실</button>
-             <%
-		      } else {
-		     %>
-		    <button type="button" class="btn" onclick="location.href='login.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='login.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='login.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='login.do'">6인실</button>
-            <%
-		      }
-            %>
-         </div> 
-       
-            
-   <div class="pull-right">
-    <%
-		if (USERID != null && USERPW != null) {
-	%>
-   <input type="button" class="btn3" onclick="location.href='reserveAlpha4.do'" value="4인실 예약하기" />
-   &nbsp;&nbsp;
-   <input type="button" class="btn3" onclick="location.href='reserveAlpha6.do'" value="6인실 예약하기" />
-   <%
-		}
-   %>
-   </div>
-   </table>
-   </div>
-         </form>
-         </div>
-         </div>
+            <form method="post" action="adminInsert.do">
+               <h3 class="login" style="letter-spacing: -1px;">관리자 등록</h3>
+               <hr>                              
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">지점번호</p>
+                     <input type="text" class="size" id="branchNo" name="branchNo">
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">방번호</p>
+                     <input type="text" class="size" id="roomNo" name="roomNo">
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">지점이름</p>
+                     <input type="text" class="size" id="branchName" name="branchName">
+                  </label>
+               </div>    
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">방정보</p>
+                     <input type="text" class="size" id="roomName" name="roomName">
+                  </label>
+               </div>          
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">관리자 아이디</p>
+                     <input type="text" class="size" id="adminId" name="adminId">
+                  </label>
+               </div>
+               
+               
+                  <p></p>
+                  <br>
+                  <p>
+                     <input type="button" class="btn2" onclick="location.href='main.do'" value="뒤로 가기" />  
+                     <!-- <button type="submit" class="btn2">예약 하기</button> -->
+                     <!-- <input type="button" class="btn2" onclick="adminInsert()" value="예약하기" /> -->
+                     <input type="submit" class="btn2" value="예약하기" />
+                  </p>
+            </form>
          </div>
 </body>
 </html>

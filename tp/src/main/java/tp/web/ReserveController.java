@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,14 +34,26 @@ public class ReserveController {
 	
 	@RequestMapping(value = "/seatInfoAlpha.do", method = RequestMethod.GET)
 	public String seatInfo() {
-		System.out.println("알파시티 좌석");
+		System.out.println("비로그인 알파시티 좌석");
 		return "reserve/seatInfoAlpha";
+	}
+	
+	@RequestMapping(value = "/loginseatInfoAlpha.do", method = RequestMethod.GET)
+	public String loginseatInfoAlpha() {
+		System.out.println("로그인 알파시티 좌석");
+		return "reserve/loginseatInfoAlpha";
 	}
 	
 	@RequestMapping(value = "/seatInfoMan.do", method = RequestMethod.GET)
 	public String seatInfo2() {
-		System.out.println("만촌 좌석");
+		System.out.println("비로그인 만촌 좌석");
 		return "reserve/seatInfoMan";
+	}
+	
+	@RequestMapping(value = "/loginseatInfoMan.do", method = RequestMethod.GET)
+	public String loginseatInfoMan() {
+		System.out.println("로그인 만촌 좌석");
+		return "reserve/loginseatInfoMan";
 	}
 	
 	@RequestMapping(value = "/reserveAlpha4.do", method = RequestMethod.GET)
@@ -258,5 +271,46 @@ public class ReserveController {
 		return data;
 	}
 
-
+	@RequestMapping(value = "/adminInsertform.do", method = RequestMethod.GET)
+	public String adminInsertform(ReserveVO vo) throws Exception {
+		
+		System.out.println("관리자 등록 페이지");	
+		
+		return "reserve/adminInsert";
+	}
+	
+//	@ResponseBody
+	@RequestMapping(value = "/adminInsert.do", method = RequestMethod.POST)
+	public String adminInsert(ReserveVO vo) throws Exception {
+		
+		System.out.println("지점 등록 폼");
+		
+		String data = "";
+		
+		int branchNo = vo.getBranchNo();
+		int roomNo = vo.getRoomNo();
+		String branchName = vo.getBranchName();
+		String roomName = vo.getRoomName();
+		String adminId = vo.getAdminId();
+		
+		vo.setBranchNo(branchNo);
+		vo.setRoomNo(roomNo);
+		vo.setBranchName(branchName);
+		vo.setRoomName(roomName);
+		vo.setAdminId(adminId);
+		
+		System.out.println(vo.getBranchNo());
+		System.out.println(vo.getRoomNo());
+		System.out.println(vo.getBranchName());
+		System.out.println(vo.getRoomName());
+		System.out.println(vo.getAdminId());
+		
+		reserveService.insertBranch(vo);
+		
+//		data = "ok";
+		
+		return "main";
+//		return data;
+	}
+		
 }

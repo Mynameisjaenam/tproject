@@ -336,7 +336,7 @@ th, td{
       <div id="reserve">
          <div id="reserve_form">
             <form>
-               <h3 class="login" style="letter-spacing: -1px;">Reservation Condition (대구 알파시티점)</h3>
+               <h3 class="login" style="letter-spacing: -1px;">예약현황 (대구 알파시티점)</h3>
 		       <input type="button" class="btn3" onclick="location.href='reserveConfirmMan.do'" value="대구 만촌점 보기" />  
                <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
                <hr>

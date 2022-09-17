@@ -353,7 +353,7 @@ hr {
       <div id="reserve">
          <div id="reserve_form">
             <form method="post" action="insertreserve.do">
-               <h3 class="login" style="letter-spacing: -1px;">Reservation</h3>
+               <h3 class="login" style="letter-spacing: -1px;">예약하기</h3>
                <hr>
                <div class="form-group">
                <input type="hidden" id="userBirth" name="userBirth" value="${SessionUserBirth}">
@@ -431,7 +431,7 @@ hr {
                   <p></p>
                   <br>
                   <p>
-                     <input type="button" class="btn2" onclick="location.href='seatInfoAlpha.do'" value="뒤로 가기" />  
+                     <input type="button" class="btn2" onclick="location.href='loginseatInfoAlpha.do'" value="뒤로 가기" />  
                      <!-- <button type="submit" class="btn2">예약 하기</button> -->
                      <input type="button" class="btn2" onclick="reservecheck()" value="예약하기" />
                   </p>

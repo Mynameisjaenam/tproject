@@ -400,11 +400,11 @@ input[name=userEmail3]::placeholder {
    <div id="con">
       <div id="login">
          <div id="login_form">
-               <h3 class="login" style="letter-spacing: -1px;">Sign up to Web</h3>
+               <h3 class="login" style="letter-spacing: -1px;">회원가입</h3>
                <hr>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">&nbsp;ID</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">&nbsp;아이디</p>
                      <input type="text" class="size" id="userId" name="userId"
                      placeholder="아이디를 입력하세요">
                      <p></p> <input type="button" class="btn3" onclick="checkId()" value="아이디 확인">
@@ -412,14 +412,14 @@ input[name=userEmail3]::placeholder {
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PASSWORD
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호
                      </p> <input type="password" class="size" id="userPw" name="userPw"
                      placeholder="비밀번호를 입력하세요">
                   </label>
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PASSWORD_CHECK
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호_확인
                      </p> <input type="password" class="size" id="userPw2" name="userPw2"
                      placeholder="비밀번호 확인">
                      <p></p>
@@ -429,14 +429,13 @@ input[name=userEmail3]::placeholder {
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">NAME
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">이름
                      </p> <input type="text" class="size" id="userName" name="userName" placeholder="이름을 입력하세요">
                   </label>
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">DATE
-                        OF BIRTH</p> <input type="text" class="size" id="userBirth" size="6" maxlength="6" name="userBirth" placeholder="ex) 990101">
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">생년월일</p> <input type="text" class="size" id="userBirth" size="6" maxlength="6" name="userBirth" placeholder="ex) 990101">
                      <!--  <span></span>
                      <input type="radio" name="gender" value="man">남
                      <span></span> &nbsp;
@@ -446,13 +445,13 @@ input[name=userEmail3]::placeholder {
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PHONENUMBER
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">전화번호
                      </p> <input type="tel" class="size" id="userPhone" size="11" maxlength="11" name="userPhone" placeholder="ex) 01012345678">
                   </label>
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">EMAIL
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">이메일
                      </p> <input type="email" class="size" id="userEmail" name="userEmail3" placeholder="ex) studycafe@123.com">                    
                   </label>
                </div>

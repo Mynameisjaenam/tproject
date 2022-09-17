@@ -26,16 +26,19 @@
       SELECT b.* FROM (
       SELECT a.* FROM(
       SELECT * FROM tp_board) a ) b
-      <where> 
-         <if test="searchType=='title' and keyword !=null and keyword !=''">
-            AND title like CONCAT('%',#{keyword},'%')
-         </if>
-         <if test="searchType=='content' and keyword !=null and keyword !=''">
-            AND content like CONCAT('%',#{keyword},'%')
-         </if>
-         <if test="searchType=='userId' and keyword !=null and keyword !=''">
+      <where>
+      <if test="searchType=='fullSearch' and keyword !=null and keyword !=''">
+         AND title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%') or userId like CONCAT('%',#{keyword},'%')
+      </if>
+      <if test="searchType=='title' and keyword !=null and keyword !=''">
+         AND title like CONCAT('%',#{keyword},'%')
+      </if>
+      <if test="searchType=='content' and keyword !=null and keyword !=''">
+         AND content like CONCAT('%',#{keyword},'%')
+      </if>
+      <if test="searchType=='userId' and keyword !=null and keyword !=''">
             AND userId like CONCAT('%',#{keyword},'%')
-         </if>
+      </if>
       </where>
       ORDER BY boardType ASC, boardNo DESC 
       LIMIT #{startList},#{listSize}
@@ -57,6 +60,9 @@
    <select id="selectBoardTotal" resultType="int">
       SELECT COUNT(*) as listCnt FROM tp_board
       <where> 
+      <if test="searchType=='fullSearch' and keyword !=null and keyword !=''">
+         AND title like CONCAT('%',#{keyword},'%') or content like CONCAT('%',#{keyword},'%') or userId like CONCAT('%',#{keyword},'%')
+      </if>
          <if test="searchType=='title' and keyword !=null and keyword !=''">
             AND title like CONCAT('%',#{keyword},'%')
          </if>

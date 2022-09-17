@@ -154,7 +154,7 @@
 </script>
    
    
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
@@ -162,17 +162,17 @@
     <div id="login">
     <div id="login_form">
     <form>
-    <h3 class="login" style="letter-spacing:-1px;">Drop out Web</h3>
+    <h3 class="login" style="letter-spacing:-1px;">회원탈퇴</h3>
     <hr>
         <div class="form-group">
         <label>
-           <p style="text-align: left; font-size:12px; color:#FDF5DC">ID</p>
+           <p style="text-align: left; font-size:12px; color:#FDF5DC">아이디</p>
             <input type="text" name="userId" id="userId" class="size" value="${SessionUserID}" readonly>
         </label>
         </div>
         <div class="form-group">
             <label>
-            <p style="text-align: left; font-size:12px; color:#FDF5DC">PW</p>
+            <p style="text-align: left; font-size:12px; color:#FDF5DC">비밀번호</p>
             <input type="password" name="userPw" id="userPw" class="size"  placeholder="비밀번호를 입력해주세요" >
              <input type="hidden" id="userPw3" name="userPw3" value="${SessionUserPW}">
               <p></p>

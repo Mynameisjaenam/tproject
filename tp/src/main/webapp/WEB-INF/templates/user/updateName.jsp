@@ -239,7 +239,7 @@ input[name=userName]::placeholder {
 </script>
 
 
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
    <div id="con">
@@ -252,7 +252,7 @@ input[name=userName]::placeholder {
                   <input type="hidden" id="userId" name="userId" class="size"
                      placeholder="아이디를 입력해주세요" value="${SessionUserID}" required/>
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">NAME</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">이름</p>
                      <input type="text" name="userName" id="userName" class="size" value="${user.userName}" placeholder="이름을 입력해주세요" required>
                   </label>
                </div>

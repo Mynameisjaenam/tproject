@@ -270,19 +270,6 @@ hr {
 
 <script type="text/javascript">
    
-/* $.datepicker.setDefaults({
-    dateFormat: 'yy-mm-dd',
-    prevText: '이전 달',
-    nextText: '다음 달',
-    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-    showMonthAfterYear: true,
-    yearSuffix: '년'
-  }); */
-   
    $(function() {
       $("#reserveDate").datepicker({ minDate: 0});      
    } );
@@ -353,7 +340,7 @@ hr {
       <div id="reserve">
          <div id="reserve_form">
             <form method="post" action="insertreserve.do">
-               <h3 class="login" style="letter-spacing: -1px;">Reservation</h3>
+               <h3 class="login" style="letter-spacing: -1px;">예약하기</h3>
                <hr>
                <div class="form-group">
                <input type="hidden" id="userBirth" name="userBirth" value="${SessionUserBirth}">
@@ -431,7 +418,7 @@ hr {
                   <p></p>
                   <br>
                   <p>
-                     <input type="button" class="btn2" onclick="location.href='seatInfoMan.do'" value="뒤로 가기" />  
+                     <input type="button" class="btn2" onclick="location.href='loginseatInfoMan.do'" value="뒤로 가기" />  
                      <!-- <button type="submit" class="btn2">예약 하기</button> -->
                      <input type="button" class="btn2" onclick="reservecheck()" value="예약하기" />
                   </p>

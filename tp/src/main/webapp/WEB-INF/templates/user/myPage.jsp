@@ -455,11 +455,11 @@ input[name=userPw]::placeholder {
       <div id="login">
          <div id="login_form">
             <form>
-               <h3 class="login" style="letter-spacing: -1px;">MY PAGE</h3>
+               <h3 class="login" style="letter-spacing: -1px;">마이페이지</h3>
                <hr>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">ID</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">아이디</p>
                      <input type="text" class="size" id="userId" name="userId" 
                       value="${SessionUserID}" readonly>
                   </label>
@@ -467,7 +467,7 @@ input[name=userPw]::placeholder {
                <!--  <input type="hidden" value="${pw.SessionUserPW}" id="sspw"/>--> 
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PASSWORD
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호
                      </p>
                      <input type="hidden" id="userPw3" name="userPw3" value="${SessionUserPW}">
                      <input type="password" class="size5" id="userPw" name="userPw" placeholder="비밀번호를 입력하세요" required>
@@ -485,7 +485,7 @@ input[name=userPw]::placeholder {
                </div> --> 
                  <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">NAME
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">이름
                      </p> 
                      <input type="text" class="size5" id="userName" name=userName value="${user.userName}" readonly>
                      <input type="button" class="btn3" onclick="modifyNames()" value="변경">
@@ -495,7 +495,7 @@ input[name=userPw]::placeholder {
              
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PHONENUMBER
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">전화번호
                      </p> 
                      <input type="tel" class="size5" id="userPhone" size="11" maxlength="11" 
                      value="${user.userPhone}" name="userPhone" required>
@@ -504,7 +504,7 @@ input[name=userPw]::placeholder {
                </div>
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">EMAIL</p> 
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">이메일</p> 
                      <input type="email" class="size5" id="userEmail" placeholder="ex)abc@naver.com"  name="email"  value="${user.userEmail}" required>
                      <input type="button" class="btn3" onclick="modifyEmail()" value="변경">
                   </label>
@@ -512,7 +512,7 @@ input[name=userPw]::placeholder {
                </div>
                  <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">DATE OF BIRTH
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">생년월일
                      </p> 
                      <input type="text" name=userBirth class="size" id="userBirth" size="6" maxlength="6" value="${user.userBirth}" readonly>
                      <!-- <input type="button" class="btn3" onclick="modifyBirth()" value="수정"> -->

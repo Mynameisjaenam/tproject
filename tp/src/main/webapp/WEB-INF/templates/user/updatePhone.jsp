@@ -232,20 +232,20 @@ input[name=userPhone]::placeholder {
 </script>
 
 
-<title>Insert title here</title>
+<title>The Venue Study Cafe</title>
 </head>
 <body>
    <div id="con">
       <div id="login">
          <div id="login_form">
             <form>
-               <h3 class="login" style="letter-spacing: -1px;">핸드폰 번호 변경</h3>
+               <h3 class="login" style="letter-spacing: -1px;">전화번호 변경</h3>
                <hr>
                <div class="form-group">
                   <input type="hidden" id="userId" name="userId" class="size"
                      placeholder="아이디를 입력해주세요" value="${SessionUserID}" required/>
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">PHONENUMBER</p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">전화번호</p>
                      <input type="tel" name="userPhone" id="userPhone" class="size" size="11" maxlength="11"
                      value="${user.userPhone}" placeholder="휴대폰 번호를 입력해주세요" required>
                   </label>

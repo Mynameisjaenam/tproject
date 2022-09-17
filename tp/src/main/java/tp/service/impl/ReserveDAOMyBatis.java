@@ -96,6 +96,12 @@ public class ReserveDAOMyBatis extends EgovAbstractMapper implements ReserveDAO{
 		return selectList("myPageReserveList", userId);
 	}
 
+	@Override
+	public void insertBranch(ReserveVO vo) throws Exception {
+		System.out.println("===> MyBatis로 insertBranch() 기능 처리");
+		insert("insertBranch", vo);		
+	}
+
 	
 	
 }

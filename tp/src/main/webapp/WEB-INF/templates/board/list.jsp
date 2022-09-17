@@ -274,12 +274,12 @@ input[name=userPw]::placeholder {
    border-radius: 5px;
 }
 #searchType{
-    width: 100px;
-      height: 40px;
+   width: 100px;
+   height: 30px;
 }
 #keyword{
    width: 250px;
-      height: 30px;
+   height: 30px;
 }
 th, td {
   text-align: left;
@@ -409,7 +409,7 @@ $(document).on('click','#btnSearch',function(e){
       <!--검색기능  -->
    <div class="big-width2" style="text-align: center">
          <select  name="searchType" id="searchType" >
-            <option value="">검색조건</option>
+            <option value="fullSearch">전체 검색</option>
             <option value="title">제목 </option>
             <option value="content">내용 </option>
             <option value="userId">작성자 </option>

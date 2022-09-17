@@ -170,42 +170,43 @@ li{
                </div>
                <div class="navbar-header" id="bs-example-navbar-collapse-1 aaa">
                 
-                     <a href="main.do" class="navbar-brand2">HOME</a>
-                     <a href="about.do" class="navbar-brand2">ABOUT</a>
-                     <a href="list.do" class="navbar-brand2">FREEBOARD</a>                  
+                     <a href="main.do" class="navbar-brand2">홈</a>
+                     <a href="about.do" class="navbar-brand2">회사소개</a>
+                     <a href="list.do" class="navbar-brand2">자유게시판</a>                  
                            <%
                               if (USERID != null && USERPW != null && (USERID.equals("ADMIN")))   { // 로그인이 됐을시
                            %>
                            <a href="" class="navbar-brand2">전체관리자</a> <!--예약목록  -->
                            <a href="adminReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
-                           <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 -->
+                           <a href="adminInsertform.do" class="navbar-brand2">관리자등록</a> <!--관리자등록 --> 
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN1")))   { // 로그인이 됐을시
                            %>
                            <a href="" class="navbar-brand2">대구알파시티점</a>
                            <a href="admin1ReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
                            <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN2")))   { // 로그인이 됐을시
                            %>
                            <a href="" class="navbar-brand2">대구만촌점</a>
                            <a href="admin2ReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
                            <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               }else if(USERID != null && USERPW != null){   
                            %>
-                     	   <a href="seatInfoAlpha.do" class="navbar-brand2">RESERVE</a>
-                           <a href="reserveConfirmAlpha.do" class="navbar-brand2">RESERVATION CONDITION</a>
-                           <a href="myPage.do" class="navbar-brand2">MYPAGE</a>                    
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                     	   <a href="loginseatInfoAlpha.do" class="navbar-brand2">예약하기</a>
+                           <a href="reserveConfirmAlpha.do" class="navbar-brand2">예약현황</a>
+                           <a href="myPage.do" class="navbar-brand2">마이페이지</a>                    
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               } else{ //로그인이 안됐을시
                            %>                           
-                     	   <a href="seatInfoAlpha.do" class="navbar-brand2">RESERVE</a>
-                           <a href="login.do" class="navbar-brand2">LOGIN</a>
+                     	   <a href="seatInfoAlpha.do" class="navbar-brand2">예약하기</a>
+                           <a href="login.do" class="navbar-brand2">로그인</a>
                            <%
                               }
                            %>
@@ -243,41 +244,42 @@ li{
          <div
             class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
             <ul>
-               <li><a href="main.do">home</a></li>               
-               <li><a href="about.do" class="navbar-brand2">ABOUT</a></li>
-               <li><a href="list.do">Freeboard</a></li>
+               <li><a href="main.do">홈</a></li>               
+               <li><a href="about.do" class="navbar-brand2">회사소개</a></li>
+               <li><a href="list.do">자유게시판</a></li>
                <%
                if (USERID != null && USERPW != null && (USERID.equals("ADMIN")))   { // 로그인이 됐을시
                %>
                <li><a href="">전체관리자</a></li> <!--예약목록  -->
                <li><a href="adminReserveList.do">예약목록</a></li> <!--예약목록  -->
-               <li><a href="userList.do">회원목록</a></li> <!--회원목록 --> 
-               <li><a href="logout.do">logout</a></li>
+               <li><a href="userList.do">회원목록</a></li> <!--회원목록 -->
+               <li><a href="adminInsertform.do" class="navbar-brand2">관리자등록</a></li> <!--관리자등록 -->
+               <li><a href="logout.do">로그아웃</a></li>
                <%
                 } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN1")))   { // 로그인이 됐을시
                %>
                <li><a href="">대구알파시티점</a></li>
                <li><a href="admin1ReserveList.do">예약목록</a></li> <!--예약목록  -->
                <li><a href="userList.do">회원목록</a></li> <!--회원목록 --> 
-               <li><a href="logout.do">logout</a></li>
+               <li><a href="logout.do">로그아웃</a></li>
                <%
                   } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN2")))   { // 로그인이 됐을시
                %>
                <li><a href="">대구만촌점</a></li>
                <li><a href="admin2ReserveList.do">예약목록</a></li> <!--예약목록  -->
                <li><a href="userList.do">회원목록</a></li> <!--회원목록 --> 
-               <li><a href="logout.do">logout</a></li>
+               <li><a href="logout.do">로그아웃</a></li>
                <%
                   } else if(USERID != null && USERPW != null){   
                %>
-               <li><a href="seatInfoAlpha.do">RESERVE</a></li>
-               <li><a href="reserveConfirmAlpha.do">RESERVATION CONDITION</a></li>
-               <li><a href="myPage.do">Mypage</a></li>
-               <li><a href="logout.do">logout</a></li>
+               <li><a href="loginseatInfoAlpha.do">예약하기</a></li>
+               <li><a href="reserveConfirmAlpha.do">예약현황</a></li>
+               <li><a href="myPage.do">마이페이지</a></li>
+               <li><a href="logout.do">로그아웃</a></li>
                <%
                   } else{ //로그인이 안됐을시
                %>
-               <li><a href="login.do">login</a></li>
+               <li><a href="login.do">로그인</a></li>
                <%
                   }
                %>

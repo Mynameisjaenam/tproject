@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sunflower&display=swap" rel="stylesheet">
 <style>
 /* @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css'); */
 @font-face {
@@ -78,6 +81,10 @@
       format('woff'),
       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf)
       format('opentype');
+}
+
+@font-face{
+   font-family: 'Sunflower', sans-serif;
 }
 
 body {
@@ -310,6 +317,10 @@ input[name=userPw]::placeholder {
 #info{
    font-size: 50px;
 }
+#info2{
+   font-size: 40px;
+}
+
 #seat{
    font-size: 30px;
 }
@@ -363,42 +374,42 @@ input[name=userPw]::placeholder {
                </div>
             
                <div class="navbar-header" id="bs-example-navbar-collapse-1 aaa">
-                     <a href="main.do" class="navbar-brand2">HOME</a>
-                     <a href="about.jsp" class="navbar-brand2">ABOUT</a>
-                     <a href="list.do" class="navbar-brand2">FREEBOARD</a>                     
+                     <a href="main.do" class="navbar-brand2">홈</a>
+                     <a href="about.jsp" class="navbar-brand2">회사소개</a>
+                     <a href="list.do" class="navbar-brand2">자유게시판</a>                     
                            <%
                               if (USERID != null && USERPW != null && (USERID.equals("ADMIN")))   { // 로그인이 됐을시
                            %>
                            <a href="" class="navbar-brand2">전체관리자</a> <!--예약목록  -->
                            <a href="adminReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
                            <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN1")))   { // 로그인이 됐을시
                            %>
                            <a href="" class="navbar-brand2">대구알파시티점</a>
                            <a href="admin1ReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
                            <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN2")))   { // 로그인이 됐을시
                            %>
                            <a href="" class="navbar-brand2">대구만촌점</a>
                            <a href="admin2ReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
                            <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               }else if(USERID != null && USERPW != null){   
                            %>
-                           <a href="reserve.do" class="navbar-brand2">RESERVE</a>
-                           <a href="reserveConfirm.do" class="navbar-brand2">RESERVATION CONFIRM</a>
-                           <a href="myPage.do" class="navbar-brand2">MYPAGE</a>                    
-                           <a href="logout.do" class="navbar-brand2">LOGOUT</a>
+                           <a href="reserve.do" class="navbar-brand2">예약하기</a>
+                           <a href="reserveConfirm.do" class="navbar-brand2">예약현황</a>
+                           <a href="myPage.do" class="navbar-brand2">마이페이지</a>                    
+                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
                            <%
                               } else{ //로그인이 안됐을시
                            %>
-                           <a href="seatInfoAlpha.do" class="navbar-brand2">RESERVE</a>
-                           <a href="login.do" class="navbar-brand2">LOGIN</a>
+                           <a href="seatInfoAlpha.do" class="navbar-brand2">예약하기</a>
+                           <a href="login.do" class="navbar-brand2">로그인</a>
                            <%
                               }
                            %>
@@ -445,7 +456,9 @@ input[name=userPw]::placeholder {
                         <h2>The Venue Introduce</h2>
                      </div>
                      <div class="intro_text">
-                        <p>저희는 여러분들의 최적의 공부 환경을 위해 최선의 서비스를 제공 합니다.</p>
+                        <p>당신의 꿈을 펼칠 공간<br>The Venue, &nbsp; 학습공간에 프리미엄을 담다.</p>
+                        <br>
+                        <p>저희는 여러분들의 최적의 공부 환경을 위해<br> 최선의 서비스를 제공 합니다.</p>
                      </div>
                   </div>
                   <div class="row">
@@ -469,8 +482,8 @@ input[name=userPw]::placeholder {
                <div class="col">
                <div class="home_content text-center">
                   <div class="section_title_container" id="info">
-                     <div class="home_title" id="info">
-                        The Venue information
+                      <div class="section_title" id="info">
+                        <h1>The Venue Branch</h1>
                      </div>
                   </div>
                   <br>
@@ -478,8 +491,8 @@ input[name=userPw]::placeholder {
                   <br>
                   <br>
                   <div class="section_title_container" id="info">
-                     <div class="home_title" id="info">
-                        대구알파시티점
+                     <div class="section_title" id="info">
+                           대구알파시티점
                      </div>
                   </div>
                   </div>
@@ -503,13 +516,15 @@ input[name=userPw]::placeholder {
                      <img src="resources/images/no1.PNG" style="width:730px; height:500px;" alt="">
                   </div>
                </div>
+               <br><br><br>
                <div class="intro_content">
-
-                     <div class="intro_title">
-                        <h3>집중력을 높이기 위한 공간배치</h3>
+                    <div class="intro_title">
+                        <h2>Improved concentration</h2>
                      </div>
                      <div class="intro_text">
-                        <p>자유로운 분위기 속 공부 습관을 만들어주는<br> 최적의 학습공간을 제공합니다.</p>
+                        
+                        <br>
+                        <p>자유로운 분위기 속 집중력 향상,&nbsp; 공부 습관을 만들어주는<br> 최적의 학습공간을 제공합니다.</p>
                      </div>
                   </div>
                &nbsp;&nbsp;&nbsp;&nbsp;
@@ -527,8 +542,9 @@ input[name=userPw]::placeholder {
             <div class="row chefs_row row-eq-height">
                <div class="col-lg-5">
                   <div class="chefs_text">
-                  <div class="intro_text" id="seat">
-                        SEAT                        
+                  <div class="section_title" id="seat">
+               <br><br>
+                        <h1>SEAT</h1>
                      </div>
                      <img src="resources/images/seat.png" style="width:900px; height:500px;" alt="">
                   </div>
@@ -540,10 +556,7 @@ input[name=userPw]::placeholder {
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
+
          
          </div>
 
@@ -552,27 +565,21 @@ input[name=userPw]::placeholder {
             class="col-xl-3 col-md-6 chef_col d-flex flex-column align-items-center justify-content-end">
             <div class="chef">
                <div class="chef_content text-center">
-
-                  
                </div>
-
             </div>
          </div>
       </div>
       <!--  -->
       <!-- B cafe -->
-
-            <br>
-            <br>
             
       <div class="chefs">
          <div class="container">
             <div class="row">
                <div class="col">
                   <div class="home_content text-center">
-                  <div class="section_title_container" id="info">
-                     <div class="home_title" id="info">
-                        대구 만촌점
+                  <div class="section_title_container" id="info2">
+                     <div class="section_title" id="info">
+                           대구만촌점
                      </div>
                   </div>
                   </div>
@@ -608,8 +615,9 @@ input[name=userPw]::placeholder {
             <div class="row chefs_row row-eq-height">
                <div class="col-lg-5">
                   <div class="chefs_text">
-                  <div class="intro_text" id="seat">
-                        SEAT                        
+                  <div class="section_title" id="seat">
+               <br><br>
+                        <h1>SEAT</h1>
                      </div>
                      <img src="resources/images/al.png" style="width:900px; height:500px;" alt="">
                   </div>
@@ -625,11 +633,8 @@ input[name=userPw]::placeholder {
          <div
             class="col-xl-3 col-md-6 chef_col d-flex flex-column align-items-center justify-content-end">
             <div class="chef">
-               <div class="chef_content text-center">
-
-                  
+               <div class="chef_content text-center">            
                </div>
-
             </div>
          </div>
       </div>
@@ -641,7 +646,7 @@ input[name=userPw]::placeholder {
                <div class="col">
                   <div class="section_title_container">
                      <div class="section_title">
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
                         <h1>Information</h1>
                      </div>
                   </div>
@@ -658,28 +663,33 @@ input[name=userPw]::placeholder {
                <div class="col-lg-5">
                   <div class="chefs_text">   
                      <img src="resources/images/abc2.png" alt="">
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                      <h1>Guide</h1>
+                      <br>
+                      <br>
+                     <img src="resources/images/doing.png" alt="">
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     
+                     <img src="resources/images/reserve.png" alt="">
                   </div>
                </div>
             </div>   
-         </div>  
-
-         <!-- Chef 
-         <div
-            class="col-xl-3 col-md-6 chef_col d-flex flex-column align-items-center justify-content-end" >
-            <div class="chef">
-               <div class="chef_content text-center">
-                  <div class="reserve" >
-                     <input type="button" class="btn2" onclick="location.href='reserve.do'" value="예약하러가기"></input>
-                  </div>
-               </div>
-               </div>
-
-            
-         </div>
-      </div>-->
+         </div> 
       
       <!-- Footer -->
 
+<br><br><br>
    <footer class="footer">
       <div class="container">
          <div class="row">
