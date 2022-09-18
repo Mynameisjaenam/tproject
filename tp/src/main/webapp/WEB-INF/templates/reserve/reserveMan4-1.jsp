@@ -411,10 +411,8 @@ hr {
                <div class="form-group">
                   <label>
                      <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약방번호</p> 
-                     <select id="roomNo" name="roomNo" class="size">
-                  <option value="">방선택</option>            
+                     <select id="roomNo" name="roomNo" class="size">           
                   <option value="1">1 - 4인실</option>
-                  <option value="2">2 - 4인실</option>
                </select>
                   </label>
                </div>
@@ -424,14 +422,14 @@ hr {
                      <p style="text-align: left; font-size: 12px; color: #FDF5DC">지점번호</p> 
                      <select id="branchNo" name="branchNo" class="size">
                            
-                  <option value="1">1번 대구알파시티점</option>
+                  <option value="2">2번 대구만촌점</option>
                </select>
                   </label>
                </div>
                   <p></p>
                   <br>
                   <p>
-                     <input type="button" class="btn2" onclick="location.href='loginseatInfoAlpha.do'" value="뒤로 가기" />  
+                     <input type="button" class="btn2" onclick="location.href='loginseatInfoMan.do'" value="뒤로 가기" />  
                      <!-- <button type="submit" class="btn2">예약 하기</button> -->
                      <input type="button" class="btn2" onclick="reservecheck()" value="예약하기" />
                   </p>

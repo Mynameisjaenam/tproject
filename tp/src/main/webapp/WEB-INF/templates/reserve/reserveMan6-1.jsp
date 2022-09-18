@@ -398,10 +398,8 @@ hr {
                <div class="form-group">
                   <label>
                      <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약방번호</p> 
-                     <select id="roomNo" name="roomNo" class="size">
-                  <option value="">방선택</option>            
+                     <select id="roomNo" name="roomNo" class="size">           
                   <option value="3">3 - 6인실</option>
-                  <option value="4">4 - 6인실</option>
                </select>
                   </label>
                </div>

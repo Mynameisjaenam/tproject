@@ -21,7 +21,7 @@ public class UserController {
 
    @Resource(name = "userService")
    private UserService userService;
-   //ffffff
+
    // 최상위경로
    @RequestMapping("/")
    public String home() {

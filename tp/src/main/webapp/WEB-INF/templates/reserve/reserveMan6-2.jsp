@@ -104,15 +104,16 @@ a {
    text-decoration: none;
    color: #333;
 }
+
 #con {
-         width: 100%;
-        height: 100vh;
-        background-image: url("https://blog.kakaocdn.net/dn/dC8sug/btqE1C7CoHK/W1cWrwnkVwXYcDJxyyqoQk/img.jpg");
-         background-position: center center;
-         background-repeat: no-repeat;
-         background-size: cover;
-         padding: 0;
-      }
+   width: 100%;
+   height: 100vh;
+   background-image: url("https://blog.kakaocdn.net/dn/dC8sug/btqE1C7CoHK/W1cWrwnkVwXYcDJxyyqoQk/img.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 0;
+}
 
 #reserve {
    width: 600px;
@@ -148,7 +149,7 @@ a {
    /* margin-left:10px; */
    border: none;
    border-radius: 5px;
-   display :inline-block;
+   display: inline-block;
 }
 
 .size2 {
@@ -201,8 +202,8 @@ a {
 
 .btn2 {
    width: 150px;
-   height: 35px;
-   font-size: 14px;
+   height: 40px;
+   font-size: 15px;
    background-color: #D7A35D;
    color: #fff;
    border: none;
@@ -269,32 +270,63 @@ hr {
 
 <script type="text/javascript">
    
-   function deleteReserve() {      
-       var pw = $("#userPw").val();
-       var pw2 = $("#userPw2").val();
-       var resNo = $("#reserveNo").val();
-               
-       if(pw == pw2) {                 
+   $(function() {
+      $("#reserveDate").datepicker({ minDate: 0});      
+   } );
+   
+   function reservecheck() {
+      var resNo = $("#reserveNo").val();
+      var id = $("#userId").val();
+      var name = $("#userName").val();
+      var phone = $("#userPhone").val();
+      var rDate = $("#reserveDate").val();
+      var sTime = $("#reserveSTime").val();
+      var eTime = $("#reserveETime").val();
+      var rNo = $("#roomNo").val();
+      var bNo = $("#branchNo").val();
+      var uBirth = $("#userBirth").val();
+      
+      
+      if(rDate == ""){
+         alert("예약 날짜를 선택하세요.")
+      }else if(sTime == ""){
+         alert("예약시작시간을 선택하세요.")
+      }else if(eTime == ""){
+         alert("예약종료시간을 선택하세요.")
+      }else if(rNo == ""){
+         alert("예약 방번호를 선택하세요.")
+      }else if(bNo == ""){
+         alert("지점번호를 선택하세요.")
+      }else{
          $.ajax({
-            url:'reserveDelete.do',
+            url:'insertreserve.do',
             type:'POST',
             data:{
                reserveNo:resNo,
-               userPw:pw,
-               userPw2:pw2
+               userId:id,
+               userName:name,
+               userPhone:phone,
+               reserveDate:rDate,
+               reserveSTime:sTime,
+               reserveETime:eTime,
+               roomNo:rNo,
+               branchNo:bNo,
+               userBirth:uBirth
             },
             datatype:'JSON',
             
             success: function(data) {
                if(data == "ok") {
-                  alert("취소가 완료되었습니다.")
-                  location = "reserveDeleteConfirm.do"
+                  alert("예약이 완료되었습니다.");               
+                  location = "reserveConfirm.do"
+               } else if(data == "fail") {
+                  alert("이미 예약된 방입니다.");
+               } else if(data == "over"){
+                  alert("예약시간을 다시 확인해주세요.")
                }
             }
          });
-       } else {
-          alert("비밀번호가 일치하지 않습니다.")
-       }
+      }
    }
    
 </script>
@@ -304,32 +336,90 @@ hr {
 <body>
 <jsp:include page="/WEB-INF/templates/header.jsp"></jsp:include>
 <br><br>
-    <div id="con">
+   <div id="con">
       <div id="reserve">
          <div id="reserve_form">
-            <form>
-               <h3 class="login" style="letter-spacing: -1px;">예약취소</h3>
+            <form method="post" action="insertreserve.do">
+               <h3 class="login" style="letter-spacing: -1px;">예약하기</h3>
                <hr>
-               <input type="hidden" class="size" id="reserveNo" name="reserveNo" value="${SessionreserveNo}" readonly="readonly">
-               <br>
-               <input type="hidden" class="size" id="userPw" name="userPw" value="${SessionUserPW}" readonly="readonly">
                <div class="form-group">
+               <input type="hidden" id="userBirth" name="userBirth" value="${SessionUserBirth}">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호 입력</p>
-                     <input type="password" class="size" id="userPw2" name="userPw2">
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약자아이디</p>
+                     <input type="text" class="size" id="userId" name="userId" readonly="readonly" value="${SessionUserID}">
+                      <input type="hidden" id="userPw" name="userPw" value="${SessionUserPW}">
                   </label>
                </div>
-                             
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약자명</p> 
+                     <input type="text" class="size" id="userName" name="userName" readonly="readonly" value="${SessionUserName}">
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약자 연락처</p>
+                     <input type="text" class="size" id="userPhone" name="userPhone" readonly="readonly" value="${SessionUserPhone}">
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약일자</p>  
+                     <input type="text" class="size" id="reserveDate" placeholder=" 예약날짜선택" name="reserveDate">
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약시작시간</p> 
+                     <select id="reserveSTime" name="reserveSTime" class="size">
+                  <option value="">시작시간선택</option>
+                  <%for(int i=10; i<=23; i++) {%>
+                  <option value="<%=i%>"><%=i %></option>
+                  <%} %>
+               </select>
+                  </label>       
+               </div>
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약종료시간</p> 
+                     <select id="reserveETime" name="reserveETime" class="size">
+                  <option value="">종료시간선택</option>
+                  <%for(int i=11; i<=24; i++) {%>
+                  <option value="<%=i%>"><%=i %></option>
+                  <%} %>
+               </select>
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">예약방번호</p> 
+                     <select id="roomNo" name="roomNo" class="size">
+                  <option value="4">4 - 6인실</option>
+               </select>
+                  </label>
+               </div>
+               
+               <div class="form-group">
+                  <label>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">지점번호</p> 
+                     <select id="branchNo" name="branchNo" class="size">
+                           
+                  <option value="2">2번 대구만촌점</option>
+               </select>
+                  </label>
+               </div>
                   <p></p>
                   <br>
                   <p>
-                      <input type="button" class="btn2" onclick="location.href='reserveConfirm.do'" value="뒤로 가기" />   
-                     <input type="button" class="btn2" onclick="deleteReserve()" value="취소하기" />
-                                      
+                     <input type="button" class="btn2" onclick="location.href='loginseatInfoMan.do'" value="뒤로 가기" />  
+                     <input type="button" class="btn2" onclick="reservecheck()" value="예약하기" />
                   </p>
             </form>
          </div>
-         </div>
-          </div>
 </body>
 </html>

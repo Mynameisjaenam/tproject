@@ -56,28 +56,52 @@ public class ReserveController {
 		return "reserve/loginseatInfoMan";
 	}
 	
-	@RequestMapping(value = "/reserveAlpha4.do", method = RequestMethod.GET)
-	public String reserveAlpha4() {
+	@RequestMapping(value = "/reserveAlpha4-1.do", method = RequestMethod.GET)
+	public String reserveAlpha41() {
 		System.out.println("알파시티 4인 좌석");
-		return "reserve/reserveAlpha4";
+		return "reserve/reserveAlpha4-1";
 	}
 	
-	@RequestMapping(value = "/reserveAlpha6.do", method = RequestMethod.GET)
-	public String reserveAlpha6() {
+	@RequestMapping(value = "/reserveAlpha4-2.do", method = RequestMethod.GET)
+	public String reserveAlpha42() {
+		System.out.println("알파시티 4인 좌석");
+		return "reserve/reserveAlpha4-2";
+	}
+	
+	@RequestMapping(value = "/reserveAlpha6-1.do", method = RequestMethod.GET)
+	public String reserveAlpha61() {
 		System.out.println("알파시티 6인 좌석");
-		return "reserve/reserveAlpha6";
+		return "reserve/reserveAlpha6-1";
 	}
 	
-	@RequestMapping(value = "/reserveMan4.do", method = RequestMethod.GET)
-	public String reserveMan4() {
+	@RequestMapping(value = "/reserveAlpha6-2.do", method = RequestMethod.GET)
+	public String reserveAlpha62() {
+		System.out.println("알파시티 6인 좌석");
+		return "reserve/reserveAlpha6-2";
+	}
+	
+	@RequestMapping(value = "/reserveMan4-1.do", method = RequestMethod.GET)
+	public String reserveMan41() {
 		System.out.println("만촌 4인 좌석");
-		return "reserve/reserveMan4";
+		return "reserve/reserveMan4-1";
 	}
 	
-	@RequestMapping(value = "/reserveMan6.do", method = RequestMethod.GET)
-	public String reserveMan6() {
+	@RequestMapping(value = "/reserveMan4-2.do", method = RequestMethod.GET)
+	public String reserveMan42() {
+		System.out.println("만촌 4인 좌석");
+		return "reserve/reserveMan4-2";
+	}
+	
+	@RequestMapping(value = "/reserveMan6-1.do", method = RequestMethod.GET)
+	public String reserveMan61() {
 		System.out.println("만촌 6인 좌석");
-		return "reserve/reserveMan6";
+		return "reserve/reserveMan6-1";
+	}
+	
+	@RequestMapping(value = "/reserveMan6-2.do", method = RequestMethod.GET)
+	public String reserveMan62() {
+		System.out.println("만촌 6인 좌석");
+		return "reserve/reserveMan6-2";
 	}
 
 	@RequestMapping(value = "/reserve.do", method = RequestMethod.GET)
@@ -307,10 +331,7 @@ public class ReserveController {
 		
 		reserveService.insertBranch(vo);
 		
-//		data = "ok";
-		
 		return "main";
-//		return data;
 	}
 		
 }

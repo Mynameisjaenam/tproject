@@ -1,14 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet"
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sunflower&display=swap" rel="stylesheet">
 <style>
 /* @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css'); */
 @font-face {
@@ -22,7 +17,7 @@
       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf)
       format('opentype');
 }
-
+ 
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
@@ -83,237 +78,6 @@
       format('opentype');
 }
 
-@font-face{
-   font-family: 'Sunflower', sans-serif;
-}
-
-body {
-   margin: 0 auto;
-}
-/* body, table, div, p ,span{font-family:'Nanum Gothic';} */
-body, table, div, p, span {
-   font-family: 'Noto Sans KR';
-}
-
-a {
-   text-decoration: none;
-   color: #333;
-}
-
-/* #con {
-   width: 100%;
-   height: 100vh;
- /*   background-color: #f5f1ee; */
-   background-image: url("https://blog.kakaocdn.net/dn/dC8sug/btqE1C7CoHK/W1cWrwnkVwXYcDJxyyqoQk/img.jpg");
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 0;
-} */
-
-#login {
-   width: 600px;
-   height: 600px;
-   margin: 0 auto;
-   /* position: relative; */
-   /* background:#ddd; */
-}
-
-#login_form {
-   /* text-align:center; */
-   border-radius: 10px;
-   padding: 50px;
-   background-color: rgba(051, 051, 051, 0.9);
-   text-align: center;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%); 
-}
-
-.login {
-   font-size: 25px;
-   font-weight: 900;
-   color: #FDF5DC;
-}
-
-.size {
-   width: 300px;
-   height: 30px;
-   padding-left: 10px;
-   background-color: #FDF5DC;
-   /* margin-left:10px; */
-   border: none;
-   border-radius: 5px;
-}
-
-.btn {
-   width: 310px;
-   height: 40px;
-   font-size: 15px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
-
-.btn:hover {
-   background: #D7A35D;
-}
-
-.btn2 {
-   width: 150px;
-   height: 40px;
-   font-size: 15px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
-
-.btn2:hover {
-   background: #D7A35D;
-}
-
-.btn3 {
-   width: 70px;
-   height: 40px;
-   font-size: 15px;
-   background-color: #D7A35D;
-   color: #fff;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-}
-
-.btn3:hover {
-   background: #D7A35D;
-}
-
-hr {
-   margin-top: 20px;
-   background: #eee;
-}
-
-.find {
-   color: #ddd;
-   font-size: 12px;
-}
-
-.find span {
-   padding-left: 10px;
-}
-
-.find span::before {
-   content: '|';
-   color: #333;
-   padding-right: 10px;
-}
-
-.find span:nth-child(1):before {
-   content: none;
-}
-
-.find span:nth-child(1) {
-   padding-left: 0px;
-}
-
-.find a:hover {
-   color: #707070;
-}
-input[name=userId]::placeholder {
-  font-size: 0.9375em;
-}
-
-input[name=userPw]::placeholder {
-  font-size: 0.9375em;
-}
-/* navbar */
-.navbar-default {
-    background-color: #282828;  /* transparent; */
-    border-color: #282828;
-    height: 9%;
-}
-/* title */
-.navbar-default .navbar-brand {
-    color: #ffffff;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #ffffff;
-}
-/* title */
-.navbar-default .navbar-brand2 {
-   color: #ffffff;
-   float: left;
-   font-size: 14px;
-   margin-right: 50px;
-}
-
-.navbar-default .navbar-brand2:hover, .navbar-default .navbar-brand2:focus
-   {
-   color: #ffffff;
-   float: left;
-   
-}
-/* link */
-.navbar-default .navbar-nav > li > a {
-    color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #D7A35D;
-}
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #D7A35D;
-    background-color: #D7A35D;
-}
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #D7A35D;
-    background-color: #D7A35D;
-}
-/* caret */
-.navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #D7A35D;
-    border-bottom-color: #D7A35D;
-}
-.navbar-default .navbar-nav > .dropdown > a:hover .caret,
-.navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #D7A35D;
-    border-bottom-color: #D7A35D;
-}
-.navbar-default .navbar-nav > .open > a .caret, 
-.navbar-default .navbar-nav > .open > a:hover .caret, 
-.navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #D7A35D;
-    border-bottom-color: #D7A35D;
-}
-/* mobile version */
- .navbar-default .navbar-toggle {
-    border-color: #969696;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #969696;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #D7A35D;
-} 
-@media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #D7A35D;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #D7A35D;
-    }  
-}
 #info{
    font-size: 50px;
 }
@@ -323,6 +87,45 @@ input[name=userPw]::placeholder {
 
 #seat{
    font-size: 30px;
+}
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+li{
+   float: left;
+   margin: 0px;
+   padding: 0px;
+   margin-right: 20px;
+   list-style-type: none; 
+}
+a:link { 
+  color : white;
+  text-decoration: none;
+}
+a:visited {
+  color : white;
+  text-decoration: none;
+}
+a:hover {
+  color : white;
+}
+a:active {
+  color : white;
+  text-decoration: none;
+}
+/* navbar */
+.navbar-default {
+    background-color:    #282828;  /* transparent; */
+    border-color:    #282828;
+    height: 10%;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+    float: left;
+    font-size: 20px;
 }
 
 </style>
@@ -350,77 +153,100 @@ input[name=userPw]::placeholder {
    href="resources/styles/about_responsive.css">
 </head>
 <body>
-   <%
+ <%
    String USERID = (String) session.getAttribute("SessionUserID"); //정상적으로 로그인이 진행되면 USERID,USERPW에 값이 들어옴
    String USERPW = (String) session.getAttribute("SessionUserPW");
    String USERNAME = (String) session.getAttribute("SessionUserName");
    String USERPHONE = (String) session.getAttribute("SessionUserPhone");
    String USERBIRTH = (String) session.getAttribute("SessionUserBirth");
    %>
-   <div class="super_container">
+ <div class="super_container">
 
       <!-- Header -->
 
       <div class="header">
-         <nav class="navbar navbar-default navbar-fixed-top">  
+         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                <div class="navbar-header">                  
-                  <a href="main.do" class="navbar-brand" style="text-decoration: none;"> 
-                  <span style="font: 1em Edwardian Script; font-size: 250%;" class="navbar-brand">
-                  The Venue</span> <br> 
-                    <span style="font: 1em Edwardian Script; font-size: 100%;" class="navbar-brand">S T U D Y &nbsp; C A F E</span>
+                  <a href="main.do" class="navbar-brand"
+                     style="text-decoration: none;"> <span
+                     style="font: 1em Edwardian Script; font-size: 150%;">The
+                        Venue</span> <br> 
+                        <span style="font: 1em Edwardian Script; font-size: 80%;">S T U D Y &nbsp; C A F E</span>
                   </a>
-                   
                </div>
-            
-               <div class="navbar-header" id="bs-example-navbar-collapse-1 aaa">
-                     <a href="main.do" class="navbar-brand2">홈</a>
-                     <a href="about.jsp" class="navbar-brand2">회사소개</a>
-                     <a href="list.do" class="navbar-brand2">자유게시판</a>                     
+              <nav class="navbar navbar-default navbar-fixed-top">
+                <ul>
+                     <li><a href="main.do" class="navbar-brand2">홈</a></li>
+                     <li><a href="about.do" class="navbar-brand2">회사소개</a></li>
+                     <li><a href="list.do" class="navbar-brand2">자유게시판</a> </li>               
                            <%
                               if (USERID != null && USERPW != null && (USERID.equals("ADMIN")))   { // 로그인이 됐을시
                            %>
-                           <a href="" class="navbar-brand2">전체관리자</a> <!--예약목록  -->
-                           <a href="adminReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
-                           <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
+                           <li><a href="" class="navbar-brand2">전체관리자</a></li> <!--예약목록  -->
+                           <li><a href="adminReserveList.do" class="navbar-brand2">예약목록</a></li> <!--예약목록  -->
+                           <li><a href="userList.do" class="navbar-brand2">회원목록</a></li> <!--회원목록 -->
+                           <li><a href="adminInsertform.do" class="navbar-brand2">관리자등록</a></li> <!--관리자등록 --> 
+                           <li><a href="logout.do" class="navbar-brand2">로그아웃</a></li>
                            <%
                               } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN1")))   { // 로그인이 됐을시
                            %>
-                           <a href="" class="navbar-brand2">대구알파시티점</a>
-                           <a href="admin1ReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
-                           <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
+                           <li><a href="" class="navbar-brand2">대구알파시티점</a></li>
+                           <li><a href="admin1ReserveList.do" class="navbar-brand2">예약목록</a></li> <!--예약목록  -->
+                           <li><a href="userList.do" class="navbar-brand2">회원목록</a></li> <!--회원목록 --> 
+                           <li><a href="logout.do" class="navbar-brand2">로그아웃</a></li>
                            <%
                               } else if (USERID != null && USERPW != null && (USERID.equals("ADMIN2")))   { // 로그인이 됐을시
                            %>
-                           <a href="" class="navbar-brand2">대구만촌점</a>
-                           <a href="admin2ReserveList.do" class="navbar-brand2">예약목록</a> <!--예약목록  -->
-                           <a href="userList.do" class="navbar-brand2">회원목록</a> <!--회원목록 --> 
-                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
+                           <li><a href="" class="navbar-brand2">대구만촌점</a></li>
+                           <li><a href="admin2ReserveList.do" class="navbar-brand2">예약목록</a></li> <!--예약목록  -->
+                           <li><a href="userList.do" class="navbar-brand2">회원목록</a></li> <!--회원목록 --> 
+                           <li><a href="logout.do" class="navbar-brand2">로그아웃</a></li>
                            <%
                               }else if(USERID != null && USERPW != null){   
                            %>
-                           <a href="reserve.do" class="navbar-brand2">예약하기</a>
-                           <a href="reserveConfirm.do" class="navbar-brand2">예약현황</a>
-                           <a href="myPage.do" class="navbar-brand2">마이페이지</a>                    
-                           <a href="logout.do" class="navbar-brand2">로그아웃</a>
+                           <li><a href="loginseatInfoAlpha.do" class="navbar-brand2">예약하기</a></li>
+                           <li><a href="reserveConfirmAlpha.do" class="navbar-brand2">예약현황</a></li>
+                           <li><a href="myPage.do" class="navbar-brand2">마이페이지</a></li>                   
+                           <li><a href="logout.do" class="navbar-brand2">로그아웃</a></li>
                            <%
                               } else{ //로그인이 안됐을시
-                           %>
-                           <a href="seatInfoAlpha.do" class="navbar-brand2">예약하기</a>
-                           <a href="login.do" class="navbar-brand2">로그인</a>
+                           %>                           
+                           <li><a href="seatInfoAlpha.do" class="navbar-brand2">예약하기</a></li>
+                           <li><a href="login.do" class="navbar-brand2">로그인</a></li>
                            <%
                               }
                            %>
-                           
+                        </ul>
+                    </nav>
+                   
+                    
+                    
+                  </div>
+                  </nav>
+               </div>
+            </div>
+      <!--/header-->
+      <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+         <div class="hamburger">
+            <div
+               class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+               <span>menu</span>
+               <div class="hamburger_container">
+                  <div class="menu_hamburger">
+                     <div class="line_1 hamburger_lines"
+                        style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                     <div class="line_2 hamburger_lines"
+                        style="visibility: inherit; opacity: 1;"></div>
+                     <div class="line_3 hamburger_lines"
+                        style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                   </div>
                </div>
             </div>
-         </nav>
-      </div>
-      <!--/header-->
-   
+         </div>
+         </div>
+         
+
       <!-- Home -->
       <div id="con">
       <div class="home">
@@ -442,6 +268,7 @@ input[name=userPw]::placeholder {
                </div>
             </div>
          </div>
+      </div>
       </div>
 
       <!-- Intro -->

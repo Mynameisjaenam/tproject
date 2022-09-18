@@ -293,7 +293,8 @@ th, td {
       <div id="reserve">
          <div id="reserve_form">
             <form>
-               <h3 class="login" style="letter-spacing: -1px;">ADMIN Reservation Confirm</h3>
+               <h3 class="login" style="letter-spacing: -1px;">전체 예약내역 조회</h3>
+               <hr>
                <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
                
         <div id="mainHide">
@@ -354,12 +355,12 @@ th, td {
    </div>              
    <!--페이징 처리  -->
    <div class="big-width" style="text-align: center">
-      <input type="button" onclick="location.href='adminReserveList.do?viewPage=1'" value="처음으로" class="btn2"></input>                 
+      <input type="button" onclick="location.href='adminReserveList.do?viewPage=1'" value="처음" class="btn2"></input>                 
       <c:forEach var="i" begin="1" end="${totalPage}">
       <input type="button" onclick="location.href='adminReserveList.do?viewPage=${i}'"  class="btn4" value="${i}"></input>
          <%-- <a href="reserveConfirm.do?viewPage=${i}" class="btn4">${i}</a> --%>
       </c:forEach>
-      <input type="button" onclick="location.href='adminReserveList.do?viewPage=${totalPage}'" value="마지막으로" class="btn2"></input>   
+      <input type="button" onclick="location.href='adminReserveList.do?viewPage=${totalPage}'" value="끝" class="btn2"></input>   
    </div>
    <br/>
                   <p></p>

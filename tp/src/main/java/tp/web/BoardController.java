@@ -115,7 +115,7 @@ public class BoardController {
       session = request.getSession();
       userId = (String) session.getAttribute("SessionUserID");
       
-      if(userId.equals(boardVO.getUserId()) || userVO.getUserRole().equals("ROLE_ADMIN")) {
+      if(userId.equals(boardVO.getUserId()) || userId.equals("ADMIN") || userId.equals("ADMIN1") || userId.equals("ADMIN2")) {
          boardService.deleteBoard(boardVO);
          boardService.reset1();
          boardService.reset2();

@@ -459,7 +459,7 @@ input[name=userEmail3]::placeholder {
                <br>
                <p>
                   <input type="button" class="btn2"
-                     onclick="location.href='main.do'" value="뒤로가기"></input> <span></span>
+                     onclick="location.href='login.do'" value="뒤로가기"></input> <span></span>
                   <input type="button" class="btn2" onclick="join()" value="회원가입"/>
                </p> 
             </div>

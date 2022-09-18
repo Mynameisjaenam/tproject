@@ -270,7 +270,7 @@ input[name=userPw]::placeholder {
          type:'GET',
          data:{
             boardNo:No,
-            userId:Id
+            userId:Id 
          },
          datatype:'JSON',
          
@@ -301,8 +301,8 @@ input[name=userPw]::placeholder {
       %>
 <br><br><br>
     <div class="container">
-        <div class="page-header"  style="color: #FDF5DC; font-size: 38px; text-align:left;">
-                게시글 보기
+        <div class="page-header"  style="color: #FDF5DC; font-size: 50px; text-align:left;">
+             게시글 보기
         <br>
         </div>
         <br/>
@@ -328,7 +328,7 @@ input[name=userPw]::placeholder {
                 </td>
             </tr>            
             <tr>
-            <% if(userId.equals(writer.getUserId())){ %>
+            <% if(session.getAttribute("SessionUserID")!=null && userId.equals(writer.getUserId())){ %>
                 <th style="padding:13px 0 0 15px; color: #FDF5DC; font-size: 17px;">제목</th>
                 <td><input id="title" type="text" class="col-md-1 form-control input-sm" value="${board.title}" /></td>
             <%}else{ %>
@@ -337,7 +337,7 @@ input[name=userPw]::placeholder {
             <%} %>
             </tr>
             <tr>
-            <%if(userId.equals(writer.getUserId())){ %>
+            <%if(session.getAttribute("SessionUserID")!=null && userId.equals(writer.getUserId())){ %>
                 <th style="padding:13px 0 0 15px; color: #FDF5DC; font-size: 17px;">내용</th>
                 <td><textarea id="content" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height: 200px;">${board.content}</textarea><span class="help-block"></span>
                 </td>
@@ -358,10 +358,10 @@ input[name=userPw]::placeholder {
         </div>
       <% if(userId != null ){ %>
         <div class="pull-right">
-         <% if(userId.equals("ADMIN") || userId.equals(writer.getUserId())){ %> 
+         <% if(userId.equals(writer.getUserId())){ %>
             <input type="button" class="btn2" id="update" onclick="update()" value="수정" />
              <%} %> 
-        <% if( userId.equals("ADMIN") || userId.equals(writer.getUserId())){ %>
+        <% if( userId.equals("ADMIN") || userId.equals("ADMIN1") || userId.equals("ADMIN2") || userId.equals(writer.getUserId())){ %>
             <input type="button" class="btn2" id="delete" onclick="deleteb()" value="삭제" />
         <%} %>        
         </div>

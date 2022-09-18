@@ -150,6 +150,13 @@ a {
    color: #FDF5DC;
 }
 
+.etc {
+   font-size: 18px;
+   font-weight: 900;
+   /* color: #FDF5DC; */
+   color: white;
+}
+
 .size {
    width: 300px;
    height: 30px;
@@ -312,7 +319,7 @@ hr {
 
   position: absolute;
 
-  top: 32%;
+  top: 31%;
 
   left: 58%;
   
@@ -324,7 +331,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -356,7 +363,7 @@ hr {
 
   position: absolute;
 
-  top: 53%;
+  top: 50%;
 
   left: 58%;
   
@@ -368,7 +375,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -398,7 +405,7 @@ hr {
 
   position: absolute;
 
-  top: 34%;
+  top: 32%;
 
   left: 85%;
   
@@ -410,7 +417,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -440,7 +447,7 @@ hr {
 
   position: absolute;
 
-  top: 50%;
+  top: 49%;
 
   left: 85%;
   
@@ -452,7 +459,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -525,10 +532,10 @@ hr {
             <%
 		      if (USERID != null && USERPW != null) {
 		    %>
-            <button type="button" class="btn" onclick="location.href='reserveMan4.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='reserveMan4.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='reserveMan6.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='reserveMan6.do'">6인실</button>
+            <button type="button" class="btn" onclick="location.href='reserveMan4-1.do'">4인실</button>  
+            <button type="button" class="btn2" onclick="location.href='reserveMan4-2.do'">4인실</button>    
+            <button type="button" class="btn3" onclick="location.href='reserveMan6-1.do'">6인실</button>
+            <button type="button" class="btn4" onclick="location.href='reserveMan6-2.do'">6인실</button>
             <%
 		      } else {
 		     %>
@@ -541,15 +548,7 @@ hr {
             %>
          </div>         
    <div class="pull-right">
-    <%
-		if (USERID != null && USERPW != null) {
-	%>
-   <input type="button" class="btn3" onclick="location.href='reserveMan4.do'" value="4인실 예약하기" />
-   &nbsp;&nbsp;
-   <input type="button" class="btn3" onclick="location.href='reserveMan6.do'" value="6인실 예약하기" />
-   <%
-		}
-   %>
+    <h6 class="etc" style="letter-spacing: -1px;">※원하시는 방을 선택하세요</h6>
    </div>
    </table>
    </div>

@@ -150,6 +150,13 @@ a {
    color: #FDF5DC;
 }
 
+.etc {
+   font-size: 18px;
+   font-weight: 900;
+   /* color: #FDF5DC; */
+   color: white;
+}
+
 .size {
    width: 300px;
    height: 30px;
@@ -324,7 +331,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -368,7 +375,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -410,7 +417,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -452,7 +459,7 @@ hr {
 
   -ms-transform: translate(-50%, -50%);
 
-  background-color: #FDF5DC;
+  background-color: #D7A35D;
 
   color: black;
 
@@ -522,15 +529,13 @@ hr {
       <table class="table table-hover" id="table">
         <div class="seat">
             <img src="resources/images/al.png" width="900" height="500">
-            <button type="button" class="btn" onclick="location.href='reserveMan4.do'">4인실</button>  
-            <button type="button" class="btn2" onclick="location.href='reserveMan4.do'">4인실</button>    
-            <button type="button" class="btn3" onclick="location.href='reserveMan6.do'">6인실</button>
-            <button type="button" class="btn4" onclick="location.href='reserveMan6.do'">6인실</button>
+            <button type="button" class="btn" onclick="location.href='reserveMan4-1.do'">4인실</button>  
+            <button type="button" class="btn2" onclick="location.href='reserveMan4-2.do'">4인실</button>    
+            <button type="button" class="btn3" onclick="location.href='reserveMan6-1.do'">6인실</button>
+            <button type="button" class="btn4" onclick="location.href='reserveMan6-2.do'">6인실</button>
          </div>         
    <div class="pull-right">
-   <input type="button" class="btn3" onclick="location.href='reserveMan4.do'" value="4인실 예약하기" />
-   &nbsp;&nbsp;
-   <input type="button" class="btn3" onclick="location.href='reserveMan6.do'" value="6인실 예약하기" />
+   <h6 class="etc" style="letter-spacing: -1px;">※원하시는 방을 선택하세요</h6>
    </div>
    </table>
    </div>

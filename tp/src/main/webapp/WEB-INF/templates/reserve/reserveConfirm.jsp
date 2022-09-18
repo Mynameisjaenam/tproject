@@ -320,7 +320,7 @@ th, td{
       <div id="reserve">
          <div id="reserve_form">
             <form>
-               <h3 class="login" style="letter-spacing: -1px;">My Reservation Confirm</h3>
+               <h3 class="login" style="letter-spacing: -1px;">나의 예약내역 조회</h3>
                <input id="reserveNo" value="${SessionreserveNo}" type="hidden" />
                <br>
                <hr>
