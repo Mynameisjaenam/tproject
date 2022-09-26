@@ -35,9 +35,11 @@ public class BoardController {
    public String form(BoardVO boardVO) throws Exception{
       return "board/form";
    }
+   
    @RequestMapping(value = "/boardSuccess.do",method = RequestMethod.GET)
    public String insertBoard(BoardVO boardVO,UserVO uservo,HttpSession session,HttpServletRequest request) throws Exception{
-      String userId = "";
+      
+	  String userId = "";
       
       session = request.getSession();
       userId = (String)session.getAttribute("SessionUserID");
@@ -47,9 +49,9 @@ public class BoardController {
       boardService.reset1();
       boardService.reset2();
       
-      
       return "board/list";
    }
+   
    @RequestMapping(value = "/list.do")
    public String selectBoardList(BoardVO boardVO,Model model,HttpSession session, HttpServletRequest request
          ,@RequestParam(required = false,defaultValue = "1")int page
@@ -97,7 +99,7 @@ public class BoardController {
       boardVO.getTitle();
       boardVO.getContent();
       
-      if(userId.equals(boardVO.getUserId())) {
+      if(userId.equals(boardVO.getUserId())|| userId.equals("ADMIN") || userId.equals("ADMIN1") || userId.equals("ADMIN2")) {
          boardService.updateBoard(boardVO);
          
          data = "success";

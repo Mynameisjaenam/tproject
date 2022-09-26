@@ -342,9 +342,10 @@ $(document).on('click','#btnSearch',function(e){
 <div id="con">
       <div id="login">
          <div id="login_form">
- <% String userId = (String) session.getAttribute("SessionUserID");
-    System.out.println(userId);
-    %> 
+<% 
+String userId = (String) session.getAttribute("SessionUserID");
+System.out.println(userId);
+%> 
 <br><br>
 <div class="container">
 <br><br>

@@ -53,11 +53,11 @@
 	</select>
 	
 	<select id="admin1ReserveList" resultMap="reserveResult">
-		SELECT * FROM tp_reserve WHERE reserveDate>=CURDATE() and branchNo=1 ORDER BY reserveDate LIMIT #{startIndex},#{endIndex}
+		SELECT * FROM tp_reserve WHERE reserveDate>=CURDATE() and branchNo=1
 	</select>
 	
 	<select id="admin2ReserveList" resultMap="reserveResult">
-		SELECT * FROM tp_reserve WHERE reserveDate>=CURDATE() and branchNo=2 ORDER BY reserveDate LIMIT #{startIndex},#{endIndex}
+		SELECT * FROM tp_reserve WHERE reserveDate>=CURDATE() and branchNo=2
 	</select>
 	
 	<select id="reserveConfirm" resultMap="reserveResult">

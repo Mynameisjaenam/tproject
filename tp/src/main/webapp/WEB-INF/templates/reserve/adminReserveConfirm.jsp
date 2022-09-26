@@ -283,6 +283,28 @@ th, td {
 }
 </style>
 
+<script type="text/javascript">
+   
+   function reservedelete(a) {
+       var resNo = a
+      
+      $.ajax({
+         url:'reserveDeleteConfirm.do',
+         type:'POST',
+         data:{
+            reserveNo:resNo   
+         },
+         datatype:'JSON',         
+         success: function(data) {
+            if(data == "success"){
+               location = "reserveDelete.do"
+            }
+            
+         }
+      });
+   }
+   
+</script>
    
 <title>The Venue Study Cafe</title>
 </head>
@@ -291,7 +313,9 @@ th, td {
 <br><br>
    <div id="con">
       <div id="reserve">
+      
          <div id="reserve_form">
+         <br><br>
             <form>
                <h3 class="login" style="letter-spacing: -1px;">전체 예약내역 조회</h3>
                <hr>
@@ -348,6 +372,7 @@ th, td {
                </c:if>
                </td>
                <td>${adminreserve.price}원</td>
+               <td><input type="button" class="btn2" onclick="reservedelete(${adminreserve.reserveNo})" value="취소" /></td>
             </tr>
          </c:forEach>
          </tbody>

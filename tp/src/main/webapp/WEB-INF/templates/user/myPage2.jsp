@@ -514,8 +514,7 @@ input[name=userPw]::placeholder {
                      <input type="button" class="btn5" onclick="location.href='drop.do'" value="회원탈퇴"></input>
                      <br><br>
                      <p align="right">
-                     <input type="button" class="btn4" onclick="location.href='main.do'" value="취소"></input>
-                     <input type="button" class="btn4" onclick="userSave()" value="저장"/>
+                     <input type="button" class="btn4" onclick="location.href='main.do'" value="홈으로"></input>
                      </p>
                   </p>
             </form>

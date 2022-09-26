@@ -467,8 +467,7 @@ input[name=userPw]::placeholder {
                <!--  <input type="hidden" value="${pw.SessionUserPW}" id="sspw"/>--> 
                <div class="form-group">
                   <label>
-                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호
-                     </p>
+                     <p style="text-align: left; font-size: 12px; color: #FDF5DC">비밀번호</p>
                      <input type="hidden" id="userPw3" name="userPw3" value="${SessionUserPW}">
                      <input type="password" class="size5" id="userPw" name="userPw" placeholder="비밀번호를 입력하세요" required>
                       <input type="button" class="btn3" onclick="modifyPw()" value="변경">
@@ -527,12 +526,10 @@ input[name=userPw]::placeholder {
                      <input type="button" class="btn5" onclick="location.href='drop.do'" value="회원탈퇴"></input>
                      <br><br>
                      <p align="right">
-                     <input type="button" class="btn4" onclick="location.href='main.do'" value="취소"></input>
-                     <input type="button" class="btn4" onclick="userSave()" value="저장"/>
+                     <input type="button" class="btn4" onclick="location.href='main.do'" value="홈으로"></input>
                      </p>
                   </p>
             </form>
          </div>
-         <!-- input type -> ajax // submit -> ajax 필요업성-->
 </body>
 </html>
